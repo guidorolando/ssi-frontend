@@ -2,7 +2,6 @@
   "name": "ssi-frontend",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "server.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
@@ -52,6 +51,6 @@
   },
   "engines": {
     "node": "9.10.1",
-    "yarn": "1.0.2"
+    "yarn": "1.6.0"
   }
 }
