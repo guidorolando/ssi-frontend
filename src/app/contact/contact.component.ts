@@ -11,10 +11,10 @@ export class ContactComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8080/contacts').subscribe(data => {
+    /*this.http.get('http://localhost:8080/contacts').subscribe(data => {
       console.log(data);
       this.contacts = data;
-    });
+    });*/
   }
 
 }
