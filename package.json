@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postisntall": "ng build --aop -prod",
+    "postisntall": "ng build --aop -prod --no-delete-output-path",
     "start": "node server.js"
   },
   "private": true,
