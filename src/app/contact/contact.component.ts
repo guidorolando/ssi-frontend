@@ -13,10 +13,10 @@ export class ContactComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    /*this.http.get('http://localhost:8080/contacts').subscribe(data => {
+    this.http.get('http://ssi-ssi.1d35.starter-us-east-1.openshiftapps.com/:8080/contacts').subscribe(data => {
       console.log(data);
       this.contacts = data;
-    });*/
+    });
   }
 
 }
