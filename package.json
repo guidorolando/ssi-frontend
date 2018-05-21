@@ -24,8 +24,12 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "bootstrap": "^4.1.1",
     "core-js": "^2.4.1",
     "express": "^4.16.3",
+    "angular2-jwt": "^0.2.3",
+    "jquery": "^3.3.1",
+    "npm": "^6.0.0",
     "path": "^0.12.7",
     "rxjs": "^5.5.6",
     "typescript": "~2.5.3",
@@ -54,6 +58,6 @@
   },
   "engines": {
     "node": ">=8.0.0 <=9.10.1",
-    "npm": ">=5.0.0 <=5.6.0"
+    "npm": ">=5.0.0 <=6.0.0"
   }
 }

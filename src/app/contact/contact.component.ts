@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import {SERVER_API_URL} from '../app.constants';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,7 @@ export class ContactComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.http.get('https://ssi-ssi.1d35.starter-us-east-1.openshiftapps.com/contacts').subscribe(data => {
+    this.http.get(SERVER_API_URL + '/contacts').subscribe(data => {
       console.log(data);
       this.contacts = data;
     });
