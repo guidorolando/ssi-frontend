@@ -6,17 +6,23 @@ import { LoginComponent } from './security/login/login.component';
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: '/app/login/login.module#LoginModule'
+    loadChildren: 'app/security/security.module#SecurityModule'
   },
   {
     path: '',
-    component: LoginComponent
+    loadChildren: 'app/security/security.module#SecurityModule'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: false , useHash: true}
+    )
+  ],
+  exports: [
+    RouterModule
+  ]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
