@@ -8,7 +8,7 @@ import {UserService} from './security/services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'SSI-Group-A';
 
   constructor(private router: Router, private userService: UserService, private cdRef: ChangeDetectorRef) {
 
