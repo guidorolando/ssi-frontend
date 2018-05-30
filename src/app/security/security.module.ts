@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
+import {SecurityRouting} from './security.routing';
 
 const appRoutes: Routes = [
   {
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    SecurityRouting,
     RouterModule.forChild(appRoutes)
   ],
   declarations: [LoginComponent]
