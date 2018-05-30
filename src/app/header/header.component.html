@@ -2,7 +2,13 @@
   <span><img src="../../assets/images/logoSSI-GA.png" height=30 width=41></span>
   <a mat-button routerLink="/home"><span class="fa fa-home fa-lg"></span> Home</a>
   <a mat-button><i class="fa fa-ambulance"></i> Accidents </a>
-  <a mat-button routerLink="/Assignement"><i class="fa fa-clipboard"></i> Assignements</a>
+  <a mat-button [matMenuTriggerFor]="assignement"><i class="fa fa-clipboard"></i> Assignment</a>
+  <mat-menu #assignement="matMenu">
+    <button mat-menu-item routerLink="/assignment">Material Assignment </button>
+    <button mat-menu-item routerLink="/material">Materials</button>
+    <button mat-menu-item routerLink="/assignment-report">Assignment Report</button>
+  </mat-menu>
+  <!-- <a mat-button routerLink="/Assignement"><i class="fa fa-clipboard"></i> Assignments</a> -->
   <a mat-button routerLink="/OEstructure"><span class="fa fa-list fa-lg"></span> Organizational Structure</a>
   <a mat-button><span class="fa fa-list fa-lg"></span> Reports </a>
   <a mat-button><span class="fa fa-address-card fa-lg"></span> About Us</a>
