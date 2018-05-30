@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
@@ -24,6 +24,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { SecurityModule } from './security/security.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { AppBootstrapModule } from './app-bootstrap.module';
+import { AboutComponent } from './about/about.component';
+import { AssignmentReportComponent } from './assignment-report/assignment-report.component';
+import { MaterialElementComponent } from './material-element/material-element.component';
 
 
 export function authHttpServiceFactory(http: Http) {
@@ -43,7 +48,11 @@ export function authHttpServiceFactory(http: Http) {
     ContactComponent,
     ContactDetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AssignmentComponent,
+    AboutComponent,
+    AssignmentReportComponent,
+    MaterialElementComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +65,7 @@ export function authHttpServiceFactory(http: Http) {
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
     MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
     MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatTableModule,
-    MatTabsModule, MatToolbarModule, MatTooltipModule, BrowserAnimationsModule,FlexLayoutModule 
+    MatTabsModule, MatToolbarModule, MatTooltipModule, BrowserAnimationsModule,FlexLayoutModule, AppBootstrapModule
   ],
   providers: [
     {provide: AuthHttp, useFactory: authHttpServiceFactory, deps: [Http]},
