@@ -37,11 +37,11 @@ import {
   MatRippleModule,
   MatTableModule
 } from '@angular/material';
-import {UserService} from './security/services/user.service';
-import {AuthGuard} from './security/guards/auth-guard.service';
-import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
-import {AppRoutingModule} from './app-routing.module';
-import {SecurityModule} from './security/security.module';
+// import {UserService} from './security/services/user.service';
+// import {AuthGuard} from './security/guards/auth-guard.service';
+// import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
+import {AppRoutingModule} from './app-routing/app-routing.module';
+// import {SecurityModule} from './security/security.module';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {AssignmentComponent} from './assignment/assignment.component';
@@ -49,6 +49,10 @@ import {AppBootstrapModule} from './app-bootstrap.module';
 import {AboutComponent} from './about/about.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
+import { ReportComponent } from './report/report.component';
+import { HomeComponent } from './home/home.component';
+import { AccidentComponent } from './accident/accident.component';
+import { OEstructureComponent } from './oestructure/oestructure.component';
 
 @NgModule({
   declarations: [
@@ -59,13 +63,17 @@ import {MaterialElementComponent} from './material-element/material-element.comp
     AboutComponent,
     AssignmentReportComponent,
     MaterialElementComponent,
+    ReportComponent,
+    HomeComponent,
+    AccidentComponent,
+    OEstructureComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    SecurityModule,
+   // SecurityModule,
     AppRoutingModule,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
@@ -74,9 +82,9 @@ import {MaterialElementComponent} from './material-element/material-element.comp
     MatTabsModule, MatToolbarModule, MatTooltipModule, BrowserAnimationsModule, FlexLayoutModule, AppBootstrapModule
   ],
   providers: [
-    UserService,
-    AuthGuard,
-    AdminAuthGuard
+   // UserService,
+   // AuthGuard,
+   // AdminAuthGuard
   ],
   bootstrap: [AppComponent]
 })
