@@ -9,7 +9,7 @@ export class MaterialElementService {
 
   constructor(private http: HttpClient) { }
 
-  getEmployees(): Observable<any> {
+  getMaterial(): Observable<any> {
     return this.http.get(baseURL + 'material')
       .map((res) => {
         return res;
