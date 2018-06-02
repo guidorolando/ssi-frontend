@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -54,6 +54,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
 import { MaterialElementService } from './security/services/material-element.service';
+import {ModelModule} from './models/model.module';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,8 @@ import { MaterialElementService } from './security/services/material-element.ser
     EmployeeListComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    ModelModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,

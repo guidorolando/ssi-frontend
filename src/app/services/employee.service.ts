@@ -10,9 +10,10 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
 
-  getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(baseURL + 'employee')
+  getEmployees(): Observable<any> {
+    return this.http.get<any>(baseURL + 'employee')
       .map((res) => {
+        console.log(res);
         return res;
       }).catch(error => {
         console.log('error: ' + error);
