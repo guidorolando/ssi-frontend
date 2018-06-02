@@ -9,7 +9,12 @@ fxLayoutAlign.xs="start center"
 fxLayoutAlign.sm="start center"
 fxLayoutAlign.gt-sm="center center"
 fxLayoutGap="15px">
-
+<div fxFlex fxFlex.gt-sm="70%">
+    <ul *ngFor="let material of materials">
+      <li>{{material.name}}</li>
+      <li>{{material.description}}</li>
+    </ul>
+</div>
 <div fxFlex fxFlex.gt-sm="20%">
 <img src="/assets/images/mat-seguridad.jpg" alt="Logo" width="300" height="300">
 </div>

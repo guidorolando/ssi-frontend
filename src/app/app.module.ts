@@ -53,6 +53,7 @@ import { HomeComponent } from './home/home.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
+import { MaterialElementService } from './security/services/material-element.service';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employ
   providers: [
     UserService,
     AuthGuard,
-    AdminAuthGuard
+    AdminAuthGuard,
+    MaterialElementService
   ],
   bootstrap: [AppComponent]
 })
