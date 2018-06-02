@@ -49,11 +49,13 @@ import {AppBootstrapModule} from './app-bootstrap.module';
 import {AboutComponent} from './about/about.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     FooterComponent,
     AssignmentComponent,
     AboutComponent,

@@ -3,14 +3,23 @@ import {Routes, RouterModule} from '@angular/router';
 import {AssignmentComponent} from './assignment/assignment.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: '',
+    component: HomeComponent
+  },
   {
     path: 'assignment',
     component: AssignmentComponent
   },
   {
-    path: 'material',
+    path: 'materialEquipment',
     component: MaterialElementComponent
   },
   {
