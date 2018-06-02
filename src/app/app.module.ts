@@ -40,7 +40,6 @@ import {
  import {UserService} from './security/services/user.service';
  import {AuthGuard} from './security/guards/auth-guard.service';
  import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
-import {AppRoutingModule} from './app-routing/app-routing.module';
 
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -58,6 +57,7 @@ import { MaterialElementService } from './security/services/material-element.ser
 import {ModelModule} from './models/model.module';
 import { AccidentComponent } from './accident/accident.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -82,7 +82,6 @@ import { OEstructureComponent } from './oestructure/oestructure.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
    // SecurityModule,
     AppRoutingModule,
     MatStepperModule,
