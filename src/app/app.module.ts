@@ -53,11 +53,15 @@ import { ReportComponent } from './report/report.component';
 import { HomeComponent } from './home/home.component';
 import { AccidentComponent } from './accident/accident.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
+import {UserService} from './security12/services/user.service';
+import {AdminAuthGuard} from './security12/guards/admin-auth-guard.service';
+import {AuthGuard} from './security12/guards/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     FooterComponent,
     AssignmentComponent,
     AboutComponent,
@@ -82,9 +86,10 @@ import { OEstructureComponent } from './oestructure/oestructure.component';
     MatTabsModule, MatToolbarModule, MatTooltipModule, BrowserAnimationsModule, FlexLayoutModule, AppBootstrapModule
   ],
   providers: [
-   // UserService,
-   // AuthGuard,
-   // AdminAuthGuard
+    UserService,
+    AuthGuard,
+    AdminAuthGuard,
+    MaterialElementService
   ],
   bootstrap: [AppComponent]
 })
