@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MaterialElementService } from '../security/services/material-element.service';
-//import { Observable } from 'rxjs/Rx';
+// import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-material-element',
@@ -11,8 +11,8 @@ import { MaterialElementService } from '../security/services/material-element.se
 export class MaterialElementComponent implements OnInit {
 
   public materials;
-  
-  constructor(private materialElement:MaterialElementService) { }
+
+  constructor(private materialElement: MaterialElementService) { }
 
   ngOnInit() {
     this.materialElement.getMaterial().subscribe(data => { this.materials = data});
