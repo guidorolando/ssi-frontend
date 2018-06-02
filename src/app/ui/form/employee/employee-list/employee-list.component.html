@@ -1,0 +1,14 @@
+<h3 *ngIf="isLoading"><i>Loading employees ... </i></h3>
+<h3 *ngIf="!isLoading">Select a employee:</h3>
+
+<nav>
+  <button (click)="getEmployees()" class="btn btn-primary">Refresh</button>
+  <a *ngFor="let employee of employees$ | async" (click)="select(employee)">{{employee.firstName}}</a>
+</nav>
+
+<div *ngIf="selectedEmployee">
+  <hr>
+  <h2>Employee Detail</h2>
+  <h3>Editing: {{selectedEmployee.firstName}}</h3>
+  <app-employee-detail [hero]="selectedEmployee"></app-employee-detail>
+</div>

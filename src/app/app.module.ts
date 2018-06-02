@@ -50,6 +50,9 @@ import {AboutComponent} from './about/about.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
 import { HomeComponent } from './home/home.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
+import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,8 @@ import { HomeComponent } from './home/home.component';
     AboutComponent,
     AssignmentReportComponent,
     MaterialElementComponent,
+    EmployeeDetailComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     SecurityModule,
     AppRoutingModule,
+    MatStepperModule,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
     MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,

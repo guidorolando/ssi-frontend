@@ -4,6 +4,7 @@ import {AssignmentComponent} from './assignment/assignment.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
 import { HomeComponent } from './home/home.component';
+import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'assignment-report',
     component: AssignmentReportComponent
+  },
+  {
+    path: 'employee-list',
+    component: EmployeeListComponent
   }
 ];
 
