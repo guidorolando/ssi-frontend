@@ -95,6 +95,7 @@ import {AppRoutingModule} from './app-routing.module';
     UserService,
     AuthGuard,
     AdminAuthGuard,
+    MaterialElementService
   ],
   bootstrap: [AppComponent]
 })
