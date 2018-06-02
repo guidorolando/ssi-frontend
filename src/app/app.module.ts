@@ -37,11 +37,11 @@ import {
   MatRippleModule,
   MatTableModule
 } from '@angular/material';
-// import {UserService} from './security/services/user.service';
-// import {AuthGuard} from './security/guards/auth-guard.service';
-// import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
+ import {UserService} from './security/services/user.service';
+ import {AuthGuard} from './security/guards/auth-guard.service';
+ import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
 import {AppRoutingModule} from './app-routing/app-routing.module';
-// import {SecurityModule} from './security/security.module';
+
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {AssignmentComponent} from './assignment/assignment.component';
@@ -53,9 +53,7 @@ import { ReportComponent } from './report/report.component';
 import { HomeComponent } from './home/home.component';
 import { AccidentComponent } from './accident/accident.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
-import {UserService} from './security12/services/user.service';
-import {AdminAuthGuard} from './security12/guards/admin-auth-guard.service';
-import {AuthGuard} from './security12/guards/auth-guard.service';
+
 
 @NgModule({
   declarations: [
