@@ -89,7 +89,6 @@ import {AuthGuard} from './security12/guards/auth-guard.service';
     UserService,
     AuthGuard,
     AdminAuthGuard,
-    MaterialElementService
   ],
   bootstrap: [AppComponent]
 })
