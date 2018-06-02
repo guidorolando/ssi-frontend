@@ -50,6 +50,7 @@ import {AboutComponent} from './about/about.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
 import { HomeComponent } from './home/home.component';
+import { MaterialElementService } from './security/services/material-element.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { HomeComponent } from './home/home.component';
   providers: [
     UserService,
     AuthGuard,
-    AdminAuthGuard
+    AdminAuthGuard,
+    MaterialElementService
   ],
   bootstrap: [AppComponent]
 })
