@@ -65,18 +65,7 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
 import {MaterialElementService} from './security/services/material-element.service';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-import {BarComponent} from './report/bar-1/bar-1component';
 import {ChartsModule} from 'ng2-charts';
-import {DemoHeaderComponent} from './report/bar-1/demo-header';
-import {BarChartDemoComponent} from './report/bar-1/charts/bar-chart-demo';
-import {LineChartDemoComponent} from './report/bar-1/charts/line-chart-demo';
-import {DoughnutChartDemoComponent} from './report/bar-1/charts/doughnut-chart-demo';
-import {PieChartDemoComponent} from './report/bar-1/charts/pie-chart-demo';
-import {PolarAreaChartDemoComponent} from './report/bar-1/charts/polar-area-chart-demo';
-import {RadarChartDemoComponent} from './report/bar-1/charts/radar-chart-demo';
-import {BaseChartDemoComponent} from './report/bar-1/charts/base-chart-demo';
-import {ChartsSectionComponent} from './report/bar-1/charts-section';
-import {ChartSectionComponent} from './report/bar-1/chart-section.component';
 
 @NgModule({
   declarations: [
@@ -97,8 +86,7 @@ import {ChartSectionComponent} from './report/bar-1/chart-section.component';
     ReportComponent,
     HomeComponent,
     AccidentComponent,
-    OEstructureComponent,
-    BarComponent
+    OEstructureComponent
   ],
   imports: [
     ChartsModule,
@@ -111,17 +99,7 @@ import {ChartSectionComponent} from './report/bar-1/chart-section.component';
    // SecurityModule,
     AppRoutingModule,
     MatStepperModule,
-    ChartSectionComponent,
     AppComponent,
-    DemoHeaderComponent,
-    ChartsSectionComponent,
-    LineChartDemoComponent,
-    BarChartDemoComponent,
-    DoughnutChartDemoComponent,
-    PieChartDemoComponent,
-    PolarAreaChartDemoComponent,
-    RadarChartDemoComponent,
-    BaseChartDemoComponent,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
     MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
