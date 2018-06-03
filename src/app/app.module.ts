@@ -62,7 +62,10 @@ import { AssignmentReportService } from './security/services/assignment-report.s
 import {ServiceModule} from './services/service.module';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type-detail/incident-type-detail.component';
-import { MaterialElementService } from './security/services/material-element.service';
+import {MaterialElementService} from './security/services/material-element.service';
+import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
+import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
+//import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,8 @@ import { MaterialElementService } from './security/services/material-element.ser
     MaterialElementComponent,
     EmployeeDetailComponent,
     EmployeeListComponent,
+    EmployeeAddComponent,
+    EmployeeEditComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     ReportComponent,
@@ -84,6 +89,7 @@ import { MaterialElementService } from './security/services/material-element.ser
     OEstructureComponent
   ],
   imports: [
+    //ChartsModule,
     ReactiveFormsModule,
     ModelModule,
     BrowserModule,
@@ -93,6 +99,7 @@ import { MaterialElementService } from './security/services/material-element.ser
    // SecurityModule,
     AppRoutingModule,
     MatStepperModule,
+    AppComponent,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
     MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
