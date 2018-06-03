@@ -62,6 +62,9 @@ import { AssignmentReportService } from './security/services/assignment-report.s
 import {ServiceModule} from './services/service.module';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type-detail/incident-type-detail.component';
+import {MaterialElementService} from './security/services/material-element.service';
+import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
+import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +78,8 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
     MaterialElementComponent,
     EmployeeDetailComponent,
     EmployeeListComponent,
+    EmployeeAddComponent,
+    EmployeeEditComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     ReportComponent,
