@@ -35,8 +35,8 @@ export class EmployeeEditComponent implements OnInit {
     });
     this.employeeService.getEmployeeById(+employeeId)
       .subscribe(data => {
-        console.log(data.data);
-        this.editForm.setValue(data.data);
+        console.log(data);
+        this.editForm.setValue(data);
       });
   }
 
