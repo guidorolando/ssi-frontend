@@ -10,6 +10,8 @@ import {AboutComponent} from './about/about.component';
 import {AccidentComponent} from './accident/accident.component';
 import {OEstructureComponent} from './oestructure/oestructure.component';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
+import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
+import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,14 @@ const routes: Routes = [
   {
     path: 'employee-list',
     component: EmployeeListComponent
+  },
+  {
+    path: 'employee-add',
+    component: EmployeeAddComponent
+  },
+  {
+    path: 'employee-edit',
+    component: EmployeeEditComponent
   },
   {
     path: 'incident-type-list',

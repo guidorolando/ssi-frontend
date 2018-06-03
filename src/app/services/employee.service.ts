@@ -35,7 +35,10 @@ export class EmployeeService extends AbstractServiceService{
     );
   }
 
-  createEmployee(): Observable<Employee> {
-    return null;
+  createEmployee(employee: Employee): Observable<Employee> {
+    return this.http.post(baseURL + 'employee', employee);
+  }
+  getEmployeeById (id: number): Observable<Employee>  {
+    return this.http.get<Employee>(baseURL + 'employee/' + id);
   }
 }
