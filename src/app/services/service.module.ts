@@ -1,6 +1,7 @@
 import {ModelModule} from '../models/model.module';
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {EmployeeService} from './employee.service';
+import {IncidentTypeService} from './incident-type.service';
 
 @NgModule({
   imports: [ModelModule],
@@ -8,4 +9,10 @@ import {EmployeeService} from './employee.service';
   declarations: []
 })
 export class ServiceModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ServiceModule,
+      providers: [EmployeeService, IncidentTypeService]
+    };
+  }
 }
