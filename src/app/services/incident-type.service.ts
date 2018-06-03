@@ -28,4 +28,22 @@ export class IncidentTypeService extends AbstractServiceService{
       });
   }
 
+  updateIncidentType(incidentType: IncidentType): Observable<IncidentType> {
+    return this.http.put(baseURL + 'IncidentType/' + `${incidentType.id}`, incidentType, httpOptions).pipe(
+      tap(_ => this.log(`updated employee id=${incidentType.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
+  createIncidentType(incidentType: IncidentType): Observable<IncidentType> {
+    return this.http.post(baseURL + 'IncidentType', incidentType, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
+  }
 }

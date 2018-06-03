@@ -10,6 +10,9 @@ import {AboutComponent} from './about/about.component';
 import {AccidentComponent} from './accident/accident.component';
 import {OEstructureComponent} from './oestructure/oestructure.component';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
+import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
+import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
+import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
 
 const routes: Routes = [
   {
@@ -63,6 +66,18 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'create-mat',
+    component: MaterialCreateComponent
+  },
+  {
+    path: 'edit-mat',
+    component: MaterialUpdateComponent
+  },
+  {
+    path: 'delete-mat',
+    component: MaterialDeleteComponent
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];

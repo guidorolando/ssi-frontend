@@ -10,8 +10,13 @@
     <button mat-menu-item routerLink="/assignment">Material Assignment </button>
     <button mat-menu-item routerLink="/materialEquipment">Materials</button>
     <button mat-menu-item routerLink="/assignment-report">Assignment Report</button>
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">Material Options</button>
   </mat-menu>
-
+  <mat-menu #subMenu="matMenu">
+    <button mat-menu-item routerLink="/create-mat">Create</button>
+    <button mat-menu-item routerLink="/edit-mat">Edit</button>
+    <button mat-menu-item routerLink="/delete-mat">Delete</button>
+  </mat-menu>
   <!-- <a mat-button routerLink="/Assignement"><i class="fa fa-clipboard"></i> Assignments</a> -->
 
   <a mat-button routerLink="/oestructure"><span class="fa fa-sitemap fa-lg"></span> Organizational Structure</a>
