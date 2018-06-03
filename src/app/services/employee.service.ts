@@ -17,8 +17,8 @@ export class EmployeeService extends AbstractServiceService{
     super(http);
   }
 
-  getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(baseURL + 'employee', {responseType: 'json'})
+  getEmployees(): Observable<any> {
+    return this.http.get<any>(baseURL + 'employee', {responseType: 'json'})
       .map((data) => {
         return data.data;
       })
@@ -28,14 +28,14 @@ export class EmployeeService extends AbstractServiceService{
       });
   }
 
-  updateEmployee(employee: Employee): Observable<Employee> {
+  updateEmployee(employee: Employee): Observable<any> {
     return this.http.put(baseURL + 'employee/' + `${employee.id}`, employee, httpOptions).pipe(
       tap(_ => this.log(`updated employee id=${employee.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
 
-  createEmployee(employee: Employee): Observable<Employee> {
+  createEmployee(employee: Employee): Observable<any> {
     return this.http.post(baseURL + 'employee', employee);
   }
   getEmployeeById (id: number): Observable<Employee>  {
