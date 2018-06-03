@@ -15,9 +15,11 @@
 
   <div style="margin-bottom: 1em">
     <button type="submit"
-            [disabled]="incidentTypeForm.id" class="btn btn-success">Save</button> &nbsp;
+            [disabled]="incidentTypeForm" class="btn btn-success">Save
+    </button> &nbsp;
     <button type="button" (click)="revert()"
-            [disabled]="incidentTypeForm.id" class="btn btn-danger">Revert</button>
+            [disabled]="incidentTypeForm" class="btn btn-danger">Revert
+    </button>
   </div>
 
 </form>
