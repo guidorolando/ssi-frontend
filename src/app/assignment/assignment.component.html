@@ -19,7 +19,7 @@ fxLayoutGap="15px">
     </mat-form-field>
     <mat-form-field>
         <mat-select formControlName="EquipmentToAssign" placeholder="Equipment to Assign">
-            <mat-option [value]="">Material example</mat-option>
+            <mat-option *ngFor="let equipment of equipments">{{equipment.id}} {{equipment.name}}</mat-option>
         </mat-select>
         <mat-hint>
             <span>select the Material to assign</span>
