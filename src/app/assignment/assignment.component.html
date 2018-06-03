@@ -14,7 +14,7 @@ fxLayoutGap="15px">
             <mat-option *ngFor="let employee of employees">{{employee.firstName}}</mat-option>
         </mat-select>
         <mat-hint>
-            <span>select the employee</span>
+            <span>select employee</span>
         </mat-hint>
     </mat-form-field>
     <mat-form-field>
@@ -22,7 +22,7 @@ fxLayoutGap="15px">
             <mat-option *ngFor="let equipment of equipments">{{equipment.id}} {{equipment.name}}</mat-option>
         </mat-select>
         <mat-hint>
-            <span>select the Material to assign</span>
+            <span>select Material to assign</span>
         </mat-hint>
     </mat-form-field>
     <button mat-button (click)="onClick" type="button" class="btn btn-primary">Assign to employee</button>
