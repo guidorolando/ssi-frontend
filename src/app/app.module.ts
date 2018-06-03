@@ -66,6 +66,7 @@ import {MaterialElementService} from './security/services/material-element.servi
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,8 +79,6 @@ import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-e
     MaterialElementComponent,
     EmployeeDetailComponent,
     EmployeeListComponent,
-    EmployeeAddComponent,
-    EmployeeEditComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     ReportComponent,
