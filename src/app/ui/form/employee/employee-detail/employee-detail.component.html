@@ -1,15 +1,8 @@
 <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-  <div style="margin-bottom: 1em">
-    <button type="submit"
-            [disabled]="employeeForm.pristine" class="btn btn-success">Save</button> &nbsp;
-    <button type="button" (click)="revert()"
-            [disabled]="employeeForm.pristine" class="btn btn-danger">Revert</button>
-  </div>
-
   <!-- Employee Detail Controls -->
   <div class="form-group">
     <label class="center-block">Nombres:
-      <input class="form-control" formControlName="fisrtName">
+      <input class="form-control" formControlName="firstName">
     </label>
   </div>
 
@@ -23,6 +16,13 @@
     <label class="center-block">Direccion:
       <input class="form-control" formControlName="address">
     </label>
+  </div>
+
+  <div style="margin-bottom: 1em">
+    <button type="submit"
+            [disabled]="employeeForm.id" class="btn btn-success">Save</button> &nbsp;
+    <button type="button" (click)="revert()"
+            [disabled]="employeeForm.id" class="btn btn-danger">Revert</button>
   </div>
 
 </form>
