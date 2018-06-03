@@ -65,7 +65,6 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
 import {MaterialElementService} from './security/services/material-element.service';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-//import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -89,7 +88,6 @@ import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-e
     OEstructureComponent
   ],
   imports: [
-    //ChartsModule,
     ReactiveFormsModule,
     ModelModule,
     BrowserModule,
