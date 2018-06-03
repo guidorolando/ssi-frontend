@@ -57,6 +57,8 @@ import {ModelModule} from './models/model.module';
 import { AccidentComponent } from './accident/accident.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
+import { AssignmentService } from './security/services/assignment.service';
+import { AssignmentReportService } from './security/services/assignment-report.service';
 import {ServiceModule} from './services/service.module';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type-detail/incident-type-detail.component';
@@ -100,7 +102,9 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
     UserService,
     AuthGuard,
     AdminAuthGuard,
-    MaterialElementService
+    MaterialElementService,
+    AssignmentService,
+    AssignmentReportService
   ],
   bootstrap: [AppComponent]
 })
