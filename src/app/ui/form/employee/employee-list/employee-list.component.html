@@ -1,3 +1,4 @@
+<!--
 <h3 *ngIf="isLoading"><i>Loading employees ... </i></h3>
 <h3 *ngIf="!isLoading">Select a employee:</h3>
 
@@ -11,4 +12,32 @@
   <h2>Employee Detail</h2>
   <h3>Editing: {{selectedEmployee.firstName}}</h3>
   <app-employee-detail [employee]="selectedEmployee"></app-employee-detail>
+</div>
+-->
+
+
+<div class="col-md-6">
+  <h2> Employee List</h2>
+  <button class="btn btn-danger" (click)="addEmployee()"> Add Employee</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees$ | async">
+      <td class="hidden">{{employee.id}}</td>
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.email}}</td>
+      <td><button class="btn btn-danger" (click)="deleteEmployee(employee)"> Delete</button>
+        <button class="btn btn-info" (click)="updateEmployee(employee)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
 </div>

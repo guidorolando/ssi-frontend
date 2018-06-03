@@ -3,6 +3,12 @@ export class Employee {
   firstName = '';
   lastName = '';
   address = '';
+  ci = '';
+  birthDate = '';
+  gender = '';
+  email = '';
+  phone = 0;
+  salary = 0.0;
 }
 
 

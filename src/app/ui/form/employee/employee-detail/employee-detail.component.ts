@@ -15,10 +15,12 @@ export class EmployeeDetailComponent implements OnChanges {
   constructor(
     private fb: FormBuilder,
     private employeeService: EmployeeService) {
+    this.createForm();
   }
 
   createForm() {
     this.employeeForm = this.fb.group({
+      id: 0,
       firstName: '',
       lastName: '',
       address: ''
@@ -49,7 +51,13 @@ export class EmployeeDetailComponent implements OnChanges {
       id: this.employee.id,
       firstName: formModel.firstName as string,
       lastName: formModel.lastName as string,
-      address: formModel.address as string
+      address: formModel.address as string,
+      ci: formModel.ci as string,
+      phone: formModel.phone as number,
+      gender: formModel.gender as string,
+      email: formModel.email as string,
+      birthDate: formModel. birthDate as string,
+      salary: formModel.salary as number
     };
     return saveEmployee;
   }
