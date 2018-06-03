@@ -86,8 +86,7 @@ import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-e
     ReportComponent,
     HomeComponent,
     AccidentComponent,
-    OEstructureComponent,
-
+    OEstructureComponent
   ],
   imports: [
     ReactiveFormsModule,
