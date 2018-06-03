@@ -58,6 +58,8 @@ import {ModelModule} from './models/model.module';
 import { AccidentComponent } from './accident/accident.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
+import { AssignmentService } from './security/services/assignment.service';
+import { AssignmentReportService } from './security/services/assignment-report.service';
 
 @NgModule({
   declarations: [
@@ -95,7 +97,9 @@ import {AppRoutingModule} from './app-routing.module';
     UserService,
     AuthGuard,
     AdminAuthGuard,
-    MaterialElementService
+    MaterialElementService,
+    AssignmentService,
+    AssignmentReportService
   ],
   bootstrap: [AppComponent]
 })

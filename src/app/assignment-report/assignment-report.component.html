@@ -1,4 +1,3 @@
-
 <div class="container jumbotron"
 fxLayout="row"
 fxLayout.sm="column"
@@ -7,7 +6,29 @@ fxLayoutAlign.xs="start center"
 fxLayoutAlign.sm="start center"
 fxLayoutAlign.gt-sm="center center"
 fxLayoutGap="15px">
-
+<div fxFlex fxFlex.gt-sm="70%">
+    <span><img src="../../assets/images/logoSSI-GA.png" height=73 width=90></span>
+    <h3>SSI-GA Equipment list</h3>
+      <table id="equipments" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Nro</th>
+              <th>Name Employee</th>
+              <th>Area</th>
+              <th>Equipment name Assigned</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let material of materials">
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+      </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
 <div fxFlex fxFlex.gt-sm="20%">
 <img src="/assets/images/mat-seguridad.jpg" alt="Logo" width="300" height="300">
 </div>
