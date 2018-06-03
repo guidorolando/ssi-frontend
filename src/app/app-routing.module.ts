@@ -53,10 +53,6 @@ const routes: Routes = [
     component: ReportComponent
   },
   {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
     path: 'accident',
     component: AccidentComponent
   },

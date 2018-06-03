@@ -100,6 +100,7 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
     UserService,
     AuthGuard,
     AdminAuthGuard,
+    MaterialElementService
   ],
   bootstrap: [AppComponent]
 })
