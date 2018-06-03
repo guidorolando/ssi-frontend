@@ -82,6 +82,8 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     MaterialElementComponent,
     EmployeeDetailComponent,
     EmployeeListComponent,
+    EmployeeAddComponent,
+    EmployeeEditComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     ReportComponent,

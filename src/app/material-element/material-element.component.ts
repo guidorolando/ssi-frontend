@@ -10,7 +10,7 @@ import { MaterialElementService } from '../security/services/material-element.se
 })
 export class MaterialElementComponent implements OnInit {
 
-  public materials;
+  materials: [{}];
 
   constructor(private materialElement: MaterialElementService) { }
 

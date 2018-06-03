@@ -8,7 +8,7 @@ fxLayoutAlign.gt-sm="center center"
 fxLayoutGap="10px">
 <div fxFlex fxFlex.gt-sm="70%">
     <h3>SSI-GA Form Equipment update</h3>
-    <form [formGroup]="editMaterial">
+    <form [formGroup]="">
         <mat-input-container floatPlaceholder="auto">
             <input matInput formControlName="name"
                    type="text"
@@ -36,9 +36,9 @@ fxLayoutGap="10px">
                 <span>select Material type</span>
             </mat-hint>
         </mat-form-field>
-        </form> 
-        
-    <button mat-button (click)="onClick" type="button" class="btn btn-success">Update</button>
+        </form>
+
+    <button mat-button type="button" class="btn btn-success">Update</button>
 
 </div>
 <div fxFlex fxFlex.gt-sm="20%">
