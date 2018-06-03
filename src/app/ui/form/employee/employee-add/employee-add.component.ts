@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {gender} from "../../../../models/employee.model";
+
 @Component({
   selector: 'app-add-employee',
   templateUrl: './employee-add.component.html',
@@ -9,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class EmployeeAddComponent implements OnInit {
   addForm: FormGroup;
+  genders = gender;
   constructor(
     private router: Router,
     private fb: FormBuilder,
