@@ -65,7 +65,6 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
 import {MaterialElementService} from './security/services/material-element.service';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -89,7 +88,6 @@ import {ChartsModule} from 'ng2-charts';
     OEstructureComponent
   ],
   imports: [
-    ChartsModule,
     ReactiveFormsModule,
     ModelModule,
     BrowserModule,
@@ -99,7 +97,6 @@ import {ChartsModule} from 'ng2-charts';
    // SecurityModule,
     AppRoutingModule,
     MatStepperModule,
-    AppComponent,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
     MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
