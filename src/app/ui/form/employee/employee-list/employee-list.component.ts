@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Employee} from '../../../../models/employee.model';
 import {EmployeeService} from '../../../../services/employee.service';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-employee',
@@ -25,7 +26,17 @@ export class EmployeeListComponent implements OnInit {
     this.employees$ = this.employeeService.getEmployees();
     this.selectedEmployee = undefined;
   }
+
   select(employee: Employee) {
     this.selectedEmployee = employee;
+  }
+
+  addEmployee() {
+  }
+
+  deleteEmployee() {
+  }
+
+  updateEmployee() {
   }
 }

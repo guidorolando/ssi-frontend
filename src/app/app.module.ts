@@ -53,11 +53,13 @@ import { HomeComponent } from './home/home.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
-import { MaterialElementService } from './security/services/material-element.service';
 import {ModelModule} from './models/model.module';
 import { AccidentComponent } from './accident/accident.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
+import {ServiceModule} from './services/service.module';
+import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
+import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type-detail/incident-type-detail.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import {AppRoutingModule} from './app-routing.module';
     MaterialElementComponent,
     EmployeeDetailComponent,
     EmployeeListComponent,
+    IncidentTypeListComponent,
+    IncidentTypeDetailComponent,
     ReportComponent,
     HomeComponent,
     AccidentComponent,
@@ -82,6 +86,7 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ServiceModule.forRoot(),
    // SecurityModule,
     AppRoutingModule,
     MatStepperModule,

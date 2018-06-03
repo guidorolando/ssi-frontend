@@ -9,6 +9,7 @@ import {ReportComponent} from './report/report.component';
 import {AboutComponent} from './about/about.component';
 import {AccidentComponent} from './accident/accident.component';
 import {OEstructureComponent} from './oestructure/oestructure.component';
+import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'employee-list',
     component: EmployeeListComponent
+  },
+  {
+    path: 'incident-type-list',
+    component: IncidentTypeListComponent
   },
   {
     path: 'assignment',
