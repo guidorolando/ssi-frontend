@@ -13,6 +13,7 @@ import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-l
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
+import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'delete-mat',
     component: MaterialDeleteComponent
+  },
+  {
+    path: 'autocomplete',
+    component: AutocompleteComponent
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
