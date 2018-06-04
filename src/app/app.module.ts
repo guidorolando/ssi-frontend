@@ -5,6 +5,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
+
 import {
   MatButtonModule,
   MatAutocompleteModule,
@@ -89,6 +91,7 @@ import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-e
     OEstructureComponent
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     ModelModule,
     BrowserModule,

@@ -1,53 +1,45 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
 <body>
-
-<select class="selectpicker">
-  <option class="special"> Accident </option>
-  <option class="special2"> Incident </option>
-</select>
-
-<select class="selectpicker">
-  <option class="special"> año </option>
-  <option class="special2"> mes </option>
-  <option class="special2"> dia </option>
-  <option class="special2"> por rango  </option>
-</select>
-
-<select class="selectpicker">
-  <option > nombre usuario 1 </option>
-  <option > nombre usuario2 </option>
-</select>
-
-<select class="selectpicker">
-  <option > Area1 </option>
-  <option > Area2 </option>
-</select>
-
-
+<h1>usuarios registrados</h1>
 <div class="container">
-  <h2>Table</h2>
-  <p>The difference:</p>
-  <div class="table-responsive">
+
+
+    <div class="table-responsive">
     <table class="table">
       <thead>
       <tr>
-        <th>#</th>
-        <th>Firstname</th>
+        <th>id</th>
+        <th>ci</th>
+        <th>first name</th>
         <th>Lastname</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
+        <th>birth date</th>
+        <th>Gender</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>addres</th>
+        <th>salary</th>
+        <th>delete</th>
         <th>Status</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>35</td>
-        <td>New York</td>
-        <td>USA</td>
-        <span class="label label-warning">Warning Label</span>
+      <tr *ngFor="let item of users">
+        <td>{{item.id}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.salary}}</td>
+
       </tr>
       </tbody>
     </table>
@@ -55,20 +47,7 @@
 </div>
 
 
-
-<button type="button" class="btn">Basic</button>
-<button type="button" class="btn btn-default">Default</button>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-link">Link</button>
-
-<span class="label label-default">Default Label</span>
-<span class="label label-primary">Primary Label</span>
-<span class="label label-success">Success Label</span>
-<span class="label label-info">Info Label</span>
-<span class="label label-warning">Warning Label</span>
-<span class="label label-danger">Danger Label</span>
 </body>
+</html>
+
+
