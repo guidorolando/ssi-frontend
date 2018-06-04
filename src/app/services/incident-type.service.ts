@@ -12,7 +12,7 @@ const httpOptions = {
   })
 };
 @Injectable()
-export class IncidentTypeService extends AbstractServiceService {
+export class IncidentTypeService extends AbstractServiceService{
   constructor(private http: HttpClient) {
     super(http);
   }

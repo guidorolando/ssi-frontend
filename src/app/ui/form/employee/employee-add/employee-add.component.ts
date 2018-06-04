@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {gender} from "../../../../models/employee.model";
+import {gender} from '../../../../models/employee.model';
 
 @Component({
   selector: 'app-add-employee',
@@ -27,11 +27,11 @@ export class EmployeeAddComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.employeeService.createEmployee(this.addForm.value).subscribe(
+    /*this.employeeService.createEmployee(this.addForm.value).subscribe(
       data => {
         console.log(data);
         this.router.navigate(['employee-list']);
       }
-    );
+    );*/
   }
 }

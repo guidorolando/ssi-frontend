@@ -67,6 +67,9 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
 import {MaterialElementService} from './security/services/material-element.service';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
+import { MaterialCreateComponent } from './material-element/material-create/material-create.component';
+import { MaterialUpdateComponent } from './material-element/material-update/material-update.component';
+import { MaterialDeleteComponent } from './material-element/material-delete/material-delete.component';
 
 
 @NgModule({
@@ -88,7 +91,10 @@ import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-e
     ReportComponent,
     HomeComponent,
     AccidentComponent,
-    OEstructureComponent
+    OEstructureComponent,
+    MaterialCreateComponent,
+    MaterialUpdateComponent,
+    MaterialDeleteComponent
   ],
   imports: [
     CommonModule,
