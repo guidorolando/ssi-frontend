@@ -68,6 +68,7 @@ import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-e
 import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
+import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import {MaterialCreateComponent} from './material-element/material-create/materi
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
-    MaterialDeleteComponent
+    MaterialDeleteComponent,
+    AutocompleteComponent
   ],
   imports: [
     ReactiveFormsModule,
