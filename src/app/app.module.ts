@@ -5,6 +5,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
+
 import {
   MatButtonModule,
   MatAutocompleteModule,
@@ -95,6 +97,7 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     MaterialDeleteComponent
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     ModelModule,
     BrowserModule,
