@@ -33,11 +33,6 @@ export class EmployeeEditComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required]
     });
-    this.employeeService.getEmployeeById(+employeeId)
-      .subscribe(data => {
-        console.log(data);
-        this.editForm.setValue(data);
-      });
   }
 
   onSubmit() {
