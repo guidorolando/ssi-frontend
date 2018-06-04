@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -12,6 +12,7 @@ import {gender} from '../../../../models/employee.model';
 export class EmployeeAddComponent implements OnInit {
   addForm: FormGroup;
   genders = gender;
+  public closeEvent = new EventEmitter<boolean>();
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -34,4 +35,9 @@ export class EmployeeAddComponent implements OnInit {
       }
     );*/
   }
+
+  closeEmployee() {
+    this.closeEvent.next(true);
+  }
+
 }
