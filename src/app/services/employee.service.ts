@@ -11,7 +11,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class EmployeeService extends AbstractServiceService{
+export class EmployeeService extends AbstractServiceService {
 
   constructor(private http: HttpClient) {
     super(http);
@@ -35,7 +35,7 @@ export class EmployeeService extends AbstractServiceService{
     );
   }
 
-  createEmployee(): Observable<Employee> {
+  createEmployee(employee: Employee): Observable<Employee> {
     return null;
   }
 }

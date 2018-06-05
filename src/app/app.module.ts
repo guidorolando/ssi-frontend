@@ -69,7 +69,7 @@ import {MaterialDeleteComponent} from './material-element/material-delete/materi
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
 import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
-import {ModalModule} from 'ngx-bootstrap';
+import {BsModalService, ModalModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -85,6 +85,7 @@ import {ModalModule} from 'ngx-bootstrap';
     EmployeeListComponent,
     EmployeeAddComponent,
     EmployeeEditComponent,
+    EmployeeDetailComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     ReportComponent,
@@ -119,7 +120,8 @@ import {ModalModule} from 'ngx-bootstrap';
     AdminAuthGuard,
     MaterialElementService,
     AssignmentService,
-    AssignmentReportService
+    AssignmentReportService,
+    BsModalService
   ],
   bootstrap: [AppComponent]
 })

@@ -28,12 +28,12 @@ export class EmployeeAddComponent implements OnInit {
     });
   }
   onSubmit() {
-    /*this.employeeService.createEmployee(this.addForm.value).subscribe(
+    this.employeeService.createEmployee(this.addForm.value).subscribe(
       data => {
         console.log(data);
         this.router.navigate(['employee-list']);
       }
-    );*/
+    );
   }
 
   closeEmployee() {

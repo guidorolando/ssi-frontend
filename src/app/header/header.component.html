@@ -6,7 +6,7 @@
   <a mat-button [matMenuTriggerFor]="accident"><span class="fa fa-ambulance fa-lg" aria-hidden="true"></span> Accidents </a>
   <mat-menu #accident="matMenu">
     <button mat-menu-item routerLink="/employee-list">Employee List </button>
-    <button mat-menu-item routerLink="/employee-add">Employee Add</button>
+    <button mat-menu-item (click)="createEmployee()">Add Employee</button>
     <button mat-menu-item routerLink="/employee-detail">Employee Detail</button>
   </mat-menu>
   <a mat-button [matMenuTriggerFor]="assignement"><i class="fa fa-clipboard"></i> Assignment</a>
