@@ -14,6 +14,9 @@ import {MaterialCreateComponent} from './material-element/material-create/materi
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
 import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
+import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
+import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
+import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 
 const routes: Routes = [
   {
@@ -39,6 +42,18 @@ const routes: Routes = [
   {
     path: 'employee-list',
     component: EmployeeListComponent
+  },
+  {
+    path: 'employee-add',
+    component: EmployeeAddComponent
+  },
+  {
+    path: 'employee-edit',
+    component: EmployeeEditComponent
+  },
+  {
+    path: 'employee-detail',
+    component: EmployeeDetailComponent
   },
   {
     path: 'incident-type-list',
