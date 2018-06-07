@@ -30,8 +30,7 @@
       </mat-input-container>
       <mat-form-field>
         <mat-select formControlName="EquipmentToAssign" placeholder="Equipment type">
-          <mat-option>seguridad</mat-option>
-          <mat-option>adicional</mat-option>
+          <mat-option *ngFor="let matType of materialType">{{matType.name}}</mat-option>
         </mat-select>
         <mat-hint>
           <span>select Material type</span>
