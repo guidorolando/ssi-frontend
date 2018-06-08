@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import {MaterialElementService} from '../../security/services/material-element.service';
 
 @Component({
   selector: 'app-material-create',
@@ -7,10 +8,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./material-create.component.css']
 })
 export class MaterialCreateComponent implements OnInit {
-
-  constructor() { }
+  materialType: [{}];
+  constructor(private materialElement: MaterialElementService) { }
 
   ngOnInit() {
+    this.materialElement.getMaterialType().subscribe(data => { this.materialType = data; });
   }
-
 }
