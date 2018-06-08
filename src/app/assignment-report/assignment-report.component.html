@@ -17,6 +17,7 @@ fxLayoutGap="15px">
               <th>Area</th>
               <th>Equipment name Assigned</th>
               <th>Description</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -24,6 +25,11 @@ fxLayoutGap="15px">
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  <button class="btn btn-danger" (click)="deleteAssignment(assignment)"> Delete</button>
+                </td>
             </tr>
           </tbody>
       </table>

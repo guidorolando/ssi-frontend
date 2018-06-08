@@ -35,15 +35,5 @@ export class IncidentTypeService extends AbstractServiceService{
     );
   }
 
-  createIncidentType(incidentType: IncidentType): Observable<IncidentType> {
-    return this.http.post(baseURL + 'IncidentType', incidentType, httpOptions)
-      .map(response => response)
-      .map((data) => {
-        return data;
-      })
-      .catch(error => {
-        console.log('error:' + error);
-        return error;
-      });
-  }
+
 }

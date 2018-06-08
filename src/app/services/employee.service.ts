@@ -17,7 +17,16 @@ export class EmployeeService extends AbstractServiceService{
     super(http);
   }
 
-
+  getEmployees(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(baseURL + 'employee', {responseType: 'json'})
+      .map((data) => {
+        return data.data;
+      })
+      .catch(error => {
+        console.log('error: ' + error);
+        return error;
+      });
+  }
 
   updateEmployee(employee: Employee): Observable<Employee> {
     return this.http.put(baseURL + 'employee/' + `${employee.id}`, employee, httpOptions).pipe(
