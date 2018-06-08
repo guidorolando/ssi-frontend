@@ -1,19 +1,17 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {observable} from 'rxjs/symbol/observable';
-import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {Employee} from './models/employee.model';
+import {baseURL} from './shared/baseurl';
 
 
 @Injectable()
 export class ClientService {
-  public url: string;
 
-  constructor(public http: HttpClient) {
-    this.url = 'http://localhost:8080/customers';
+  constructor(private http: HttpClient) {
   }
 
-  getClientes(): Observable<any> {
-    return this.http.get(this.url);
+  public getEmployee(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(baseURL + 'employee');
   }
-
 }

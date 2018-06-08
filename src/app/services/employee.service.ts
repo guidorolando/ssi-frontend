@@ -11,19 +11,28 @@ const httpOptions = {
 };
 
 @Injectable()
-export class EmployeeService extends AbstractServiceService{
+export class EmployeeService extends AbstractServiceService {
 
   constructor(private http: HttpClient) {
     super(http);
   }
 
+<<<<<<< HEAD
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(baseURL + 'employee', {responseType: 'json'})
+=======
+  getEmployees(): Observable<any> {
+    return this.http.get<any>(baseURL + 'employee', {responseType: 'json'})
+>>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
       .map((data) => {
         return data.data;
       })
       .catch(error => {
+<<<<<<< HEAD
         console.log('error: ' + error);
+=======
+        console.log('error:' + error);
+>>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
         return error;
       });
   }
@@ -35,7 +44,7 @@ export class EmployeeService extends AbstractServiceService{
     );
   }
 
-  createEmployee(): Observable<Employee> {
+  createEmployee(employee: Employee): Observable<Employee> {
     return null;
   }
 }

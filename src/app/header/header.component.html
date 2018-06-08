@@ -30,8 +30,30 @@
 
 
 
+<<<<<<< HEAD
 
 
+=======
+  <a mat-button [matMenuTriggerFor]="accident"><span class="fa fa-ambulance fa-lg" aria-hidden="true"></span> Accidents </a>
+  <mat-menu #accident="matMenu">
+    <button mat-menu-item routerLink="/employee-list">Employee List </button>
+    <button mat-menu-item (click)="createEmployee()">Add Employee</button>
+    <button mat-menu-item routerLink="/employee-detail">Employee Detail</button>
+  </mat-menu>
+  <a mat-button [matMenuTriggerFor]="assignement"><i class="fa fa-clipboard"></i> Assignment</a>
+  <mat-menu #assignement="matMenu">
+    <button mat-menu-item routerLink="/assignment">Material Assignment </button>
+    <button mat-menu-item routerLink="/materialEquipment">Materials</button>
+    <button mat-menu-item routerLink="/assignment-report">Assignment Report</button>
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">Material Options</button>
+  </mat-menu>
+  <mat-menu #subMenu="matMenu">
+    <button mat-menu-item routerLink="/create-mat">Create</button>
+    <button mat-menu-item routerLink="/edit-mat">Edit</button>
+    <button mat-menu-item routerLink="/delete-mat">Delete</button>
+  </mat-menu>
+  <!-- <a mat-button routerLink="/Assignement"><i class="fa fa-clipboard"></i> Assignments</a> -->
+>>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
 
 
 

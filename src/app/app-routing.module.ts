@@ -13,6 +13,13 @@ import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-l
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
+<<<<<<< HEAD
+=======
+import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
+import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
+import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
+import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
+>>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
 
 const routes: Routes = [
   {
@@ -38,6 +45,18 @@ const routes: Routes = [
   {
     path: 'employee-list',
     component: EmployeeListComponent
+  },
+  {
+    path: 'employee-add',
+    component: EmployeeAddComponent
+  },
+  {
+    path: 'employee-edit',
+    component: EmployeeEditComponent
+  },
+  {
+    path: 'employee-detail',
+    component: EmployeeDetailComponent
   },
   {
     path: 'incident-type-list',
@@ -79,6 +98,13 @@ const routes: Routes = [
     path: 'delete-mat',
     component: MaterialDeleteComponent
   },
+<<<<<<< HEAD
+=======
+  {
+    path: 'autocomplete',
+    component: AutocompleteComponent
+  },
+>>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

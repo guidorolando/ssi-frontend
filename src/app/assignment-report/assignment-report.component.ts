@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { EmployeeService } from '../services/employee.service';
+import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import {EmployeeService} from '../services/employee.service';
 
 
 @Component({
@@ -12,7 +12,8 @@ export class AssignmentReportComponent implements OnInit {
 
   public employeesReport;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
