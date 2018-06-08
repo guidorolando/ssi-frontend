@@ -65,18 +65,11 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
 import {MaterialElementService} from './security/services/material-element.service';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-<<<<<<< HEAD
-import { MaterialCreateComponent } from './material-element/material-create/material-create.component';
-import { MaterialUpdateComponent } from './material-element/material-update/material-update.component';
-import { MaterialDeleteComponent } from './material-element/material-delete/material-delete.component';
-
-=======
 import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
 import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
 import {BsModalService, ModalModule} from 'ngx-bootstrap';
->>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
 
 @NgModule({
   declarations: [
@@ -101,12 +94,8 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap';
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
-<<<<<<< HEAD
-    MaterialDeleteComponent
-=======
     MaterialDeleteComponent,
     AutocompleteComponent
->>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
   ],
   imports: [
     ReactiveFormsModule,

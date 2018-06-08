@@ -28,20 +28,13 @@ export class IncidentTypeService extends AbstractServiceService{
       });
   }
 
-<<<<<<< HEAD
-  updateIncidentType(incidentType: IncidentType): Observable<IncidentType> {
-=======
   updateIncidentType(incidentType: IncidentType): Observable<any> {
->>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
     return this.http.put(baseURL + 'IncidentType/' + `${incidentType.id}`, incidentType, httpOptions).pipe(
       tap(_ => this.log(`updated employee id=${incidentType.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
 
-<<<<<<< HEAD
-
-=======
   createIncidentType(incidentType: IncidentType): Observable<any> {
     return this.http.post(baseURL + 'IncidentType', incidentType, httpOptions)
       .map(response => response)
@@ -53,5 +46,4 @@ export class IncidentTypeService extends AbstractServiceService{
         return error;
       });
   }
->>>>>>> b9672255624e69bbefe04fb490984f902b2f3a4d
 }
