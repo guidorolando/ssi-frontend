@@ -15,6 +15,7 @@ fxLayoutGap="15px">
               <th>Nro</th>
               <th>Name</th>
               <th>Description</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -22,6 +23,10 @@ fxLayoutGap="15px">
               <td>{{material.id}}</td>
               <td>{{material.name}}</td>
               <td>{{material.description}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteMaterial(material)"> Delete</button>
+                <button class="btn btn-success" (click)="updateMaterial(material)" style="margin-left: 20px;"> Edit</button>
+              </td>
             </tr>
           </tbody>
       </table>
