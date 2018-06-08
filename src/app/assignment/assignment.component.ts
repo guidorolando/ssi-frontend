@@ -13,11 +13,13 @@ export class AssignmentComponent implements OnInit {
   public employees;
   public equipments;
 
-  constructor(private materialEq: MaterialElementService) {
+  constructor(private materialEq: MaterialElementService, private employeeService: EmployeeService) {
   }
 
   ngOnInit() {
-
+    this.employeeService.getEmployees().subscribe(data => { console.log('employe ', data);
+      this.employees = data;
+    });
     this.materialEq.getMaterial().subscribe(data => {
       this.equipments = data;
     });
