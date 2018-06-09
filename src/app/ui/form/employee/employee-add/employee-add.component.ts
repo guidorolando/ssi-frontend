@@ -1,8 +1,8 @@
-import {Component, EventEmitter, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {gender} from '../../../../models/employee.model';
+import {Employee, gender} from '../../../../models/employee.model';
 
 @Component({
   selector: 'app-add-employee',
@@ -10,9 +10,34 @@ import {gender} from '../../../../models/employee.model';
   styleUrls: ['./employee-add.component.css']
 })
 export class EmployeeAddComponent implements OnInit {
-  addForm: FormGroup;
+  employee: Employee;
+  // addForm: FormGroup;
+  private isValid: Boolean = true;
+  private  message: String = '';
   genders = gender;
   public closeEvent = new EventEmitter<boolean>();
+  constructor(private employeeService: EmployeeService, private  router: Router) {
+    this.employee = new Employee();
+  }
+  ngOnInit() {
+  }
+  public saveEmployee(): void {
+    this.isValid = this.employeeService.validate(this.employee);
+    if (this.isValid) {
+      console.log('lalala', this.employee);
+      this.employeeService.createEmployee(this.employee).subscribe(res => {
+        this.closeEmployee();
+      });
+    } else {
+      this.message = 'los camos son obligatorios';
+    }
+  }
+
+  closeEmployee() {
+    this.closeEvent.next(true);
+  }
+
+ /* public closeEvent = new EventEmitter<boolean>();
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -34,10 +59,6 @@ export class EmployeeAddComponent implements OnInit {
         this.router.navigate(['employee-list']);
       }
     );
-  }
-
-  closeEmployee() {
-    this.closeEvent.next(true);
-  }
+  }*/
 
 }
