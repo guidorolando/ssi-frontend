@@ -37,9 +37,9 @@ import {
   MatRippleModule,
   MatTableModule
 } from '@angular/material';
- import {UserService} from './security/services/user.service';
- import {AuthGuard} from './security/guards/auth-guard.service';
- import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
+import {UserService} from './security/services/user.service';
+import {AuthGuard} from './security/guards/auth-guard.service';
+import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
 
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';

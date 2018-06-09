@@ -18,4 +18,14 @@ export class MaterialElementService {
         return error;
       });
   }
+
+  getMaterialType(): Observable<any> {
+    return this.http.get(baseURL +'materialType/materialType').map((res) => {
+        return res;
+      }).catch(error => {
+        console.log('error: ' + error);
+        return error;
+      });
+  }
+
 }
