@@ -65,10 +65,11 @@ import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type
 import {MaterialElementService} from './security/services/material-element.service';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-import { MaterialCreateComponent } from './material-element/material-create/material-create.component';
-import { MaterialUpdateComponent } from './material-element/material-update/material-update.component';
-import { MaterialDeleteComponent } from './material-element/material-delete/material-delete.component';
-
+import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
+import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
+import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
+import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
+import {BsModalService, ModalModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     EmployeeListComponent,
     EmployeeAddComponent,
     EmployeeEditComponent,
+    EmployeeDetailComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     ReportComponent,
@@ -92,7 +94,8 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
-    MaterialDeleteComponent
+    MaterialDeleteComponent,
+    AutocompleteComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -103,6 +106,7 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     ServiceModule.forRoot(),
    // SecurityModule,
     AppRoutingModule,
+    ModalModule.forRoot(),
     MatStepperModule,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
@@ -116,7 +120,8 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     AdminAuthGuard,
     MaterialElementService,
     AssignmentService,
-    AssignmentReportService
+    AssignmentReportService,
+    BsModalService
   ],
   bootstrap: [AppComponent]
 })
