@@ -1,0 +1,101 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title pull-left">
+      <span class="text-warning icon-interface-1"></span>
+      <span>Create Incident</span>
+    </h3>
+    <button type="button" class="close close_modal" aria-label="Close" (click)="closeIncident()">
+      <img src="/assets/images/close.jpg">
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <form class="form-horizontal" [formGroup]="createIncidentForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="employeeId">Select Employee:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="employeeId" placeholder="search employee" name="searchEmployee">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="employeeFirstNameId">Employee First Name:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="employeeFirstNameId" placeholder="employee first name"
+                 name="employeeFirstName" disabled="disabled">
+        </div>
+        <label class="control-label col-sm-2" for="employeeLastNameId">Employee Last Name:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="employeeLastNameId" placeholder="employee last name"
+                 name="employeeLastName" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="employeeCiId">Employee CI:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="employeeCiId" placeholder="employee ci" name="employeeCi"
+                 disabled="disabled">
+        </div>
+        <label class="control-label col-sm-2" for="employeeGenderId">Employee Gender:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="employeeGenderId" placeholder="employee gender"
+                 name="employeeGender" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="incidentName">Incident Type:</label>
+        <div class="col-sm-4">
+          <select id="incidentName" placeholder="select incident type">
+            <option></option>
+          </select>
+        </div>
+        <label class="control-label col-sm-2" for="incidentAgent">Incident Agent:</label>
+        <div class="col-sm-4">
+          <select id="incidentAgent" placeholder="select incident agent">
+            <option></option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="affectedPartsId">Affected Parts:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="affectedPartsId" placeholder="affected parts"
+                 name="affectedParts">
+        </div>
+        <label class="control-label col-sm-2" for="accidentSiteId">Accident Site:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="accidentSiteId" placeholder="accident site" name="accidentSite">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="accidentDateId">Affected Parts:</label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="accidentDateId" name="accidentDate">
+        </div>
+        <label class="control-label col-sm-2" for="accidentDayId">Accident Day:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="accidentDayId" placeholder="Select Day" name="accidentDay">
+        </div>
+        <label class="control-label col-sm-2" for="accidentHrId">Accident Hr:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="accidentHrId" name="accidentHr">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="button" class="btn btn-primary" (click)="closeIncident()">Create</button>
+          <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top"
+                  (click)="closeIncident()">Cancel
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

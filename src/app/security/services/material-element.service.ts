@@ -11,21 +11,31 @@ export class MaterialElementService {
   constructor(private http: HttpClient) { }
 
   getMaterial(): Observable<any> {
-    return this.http.get(baseURL +'Material').map((res) => {
+    return this.http.get(baseURL + 'Material').map((res) => {console.log('ruta: ', baseURL + 'material');
+    console.log('data: ', res);
         return res;
       }).catch(error => {
         console.log('error: ' + error);
         return error;
       });
+  }
+  getMaterialById(id: number): Observable<any> {
+    return this.http.get(baseURL + 'Material/' + id).map((res) => {
+      console.log('data: ', res);
+      return res;
+    }).catch(error => {
+      console.log('error: ' + error);
+      return error;
+    });
   }
 
   getMaterialType(): Observable<any> {
-    return this.http.get(baseURL +'materialType/materialType').map((res) => {
-        return res;
-      }).catch(error => {
-        console.log('error: ' + error);
-        return error;
-      });
+    return this.http.get(baseURL + 'materialType/materialType').map((res) => {
+      console.log('data: ', res);
+      return res;
+    }).catch(error => {
+      console.log('error: ' + error);
+      return error;
+    });
   }
-
 }

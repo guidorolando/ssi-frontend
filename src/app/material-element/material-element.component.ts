@@ -11,11 +11,13 @@ import { MaterialElementService } from '../security/services/material-element.se
 export class MaterialElementComponent implements OnInit {
 
   materials: [{}];
+  materialId: [{}];
 
   constructor(private materialElement: MaterialElementService) { }
 
   ngOnInit() {
-    this.materialElement.getMaterial().subscribe(data => { this.materials = data});
+    this.materialElement.getMaterial().subscribe(data => { this.materials = data; });
+    this.materialElement.getMaterialById(3).subscribe(data => { this.materialId = data; });
   }
 
 }

@@ -54,7 +54,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
 import {ModelModule} from './models/model.module';
-import { AccidentComponent } from './accident/accident.component';
+import {IncidentListComponent} from './accident/incident-list/incident-list.component';
+import {IncidentAddComponent} from './accident/incident-add/incident-add.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
 import { AssignmentService } from './security/services/assignment.service';
@@ -90,7 +91,8 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap';
     IncidentTypeDetailComponent,
     ReportComponent,
     HomeComponent,
-    AccidentComponent,
+    IncidentListComponent,
+    IncidentAddComponent,
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
