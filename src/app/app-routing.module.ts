@@ -7,7 +7,8 @@ import {HomeComponent} from './home/home.component';
 import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 import {ReportComponent} from './report/report.component';
 import {AboutComponent} from './about/about.component';
-import {AccidentComponent} from './accident/accident.component';
+import {IncidentListComponent} from './accident/incident-list/incident-list.component';
+import {IncidentAddComponent} from './accident/incident-add/incident-add.component';
 import {OEstructureComponent} from './oestructure/oestructure.component';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
@@ -72,8 +73,12 @@ const routes: Routes = [
     component: ReportComponent
   },
   {
-    path: 'accident',
-    component: AccidentComponent
+    path: 'incident-list',
+    component: IncidentListComponent
+  },
+  {
+    path: 'incident-add',
+    component: IncidentAddComponent
   },
   {
     path: 'oestructure',

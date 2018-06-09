@@ -3,6 +3,7 @@ import {ModuleWithProviders, NgModule} from '@angular/core';
 import {EmployeeService} from './employee.service';
 import {IncidentTypeService} from './incident-type.service';
 import {AutocompleteService} from './autocomplete.service';
+import {IncidentService} from './incident.service';
 
 @NgModule({
   imports: [ModelModule],
@@ -13,7 +14,7 @@ export class ServiceModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: ServiceModule,
-      providers: [EmployeeService, IncidentTypeService, AutocompleteService]
+      providers: [EmployeeService, IncidentTypeService, AutocompleteService, IncidentService]
     };
   }
 }
