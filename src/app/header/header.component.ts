@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeeAddComponent} from '../ui/form/employee/employee-add/employee-add.component';
 import {EmployeeService} from '../services/employee.service';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {MaterialTypeAddComponent} from '../material-type/material-type-add/material-type-add.component';
+import {MaterialTypeService} from '../services/material-type.service';
 // import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,19 +14,19 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 export class HeaderComponent implements OnInit {
   modalRef: BsModalRef;
 
-  constructor(private employeeService: EmployeeService, private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
   }
 
-  createEmployee() {
-    this.modalRef = this.modalService.show(EmployeeAddComponent, {class: 'modal-lg'});
+  createMaterialType() {
+    this.modalRef = this.modalService.show(MaterialTypeAddComponent, {class: 'modal-md'});
     this.modalRef.content.isModal = true;
     this.modalRef.content.closeEvent.subscribe(
-      res => this.closeEmployee(res)
+      res => this.closeMaterialType(res)
     );
   }
-  closeEmployee(close: boolean): void {
+  closeMaterialType(close: boolean): void {
     if (close && this.modalRef) {
       this.modalRef.hide();
       this.modalRef.content.closeEvent.unsubscribe();

@@ -46,15 +46,40 @@
       </div>
 
       <div class="form-group">
+        <label class="control-label col-sm-2" for="accidentDateId">Accident Date:</label>
+        <div class="col-sm-2">
+          <input type="date" class="form-control" id="accidentDateId" name="accidentDate">
+        </div>
+
+        <label class="control-label col-sm-2" for="accidentHrId">Accident Hr:</label>
+        <div class="col-sm-2">
+          <input type="time" class="form-control" name="hora" min="18:00" max="21:00" step="3600" id="accidentHrId">
+        </div>
+
+        <label class="control-label col-sm-2" for="accidentDayId">Accident Day:</label>
+        <div class="col-sm-2">
+          <select id="accidentDayId" class="form-control">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
         <label class="control-label col-sm-2" for="incidentName">Incident Type:</label>
         <div class="col-sm-4">
-          <select id="incidentName" placeholder="select incident type">
+          <select id="incidentName" class="form-control">
             <option></option>
           </select>
         </div>
         <label class="control-label col-sm-2" for="incidentAgent">Incident Agent:</label>
         <div class="col-sm-4">
-          <select id="incidentAgent" placeholder="select incident agent">
+          <select id="incidentAgent" class="form-control">
             <option></option>
           </select>
         </div>
@@ -63,32 +88,18 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="affectedPartsId">Affected Parts:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="affectedPartsId" placeholder="affected parts"
-                 name="affectedParts">
+          <textarea type="text" rows="4" class="form-control" id="affectedPartsId" placeholder="affected parts"
+                    name="affectedParts"></textarea>
         </div>
         <label class="control-label col-sm-2" for="accidentSiteId">Accident Site:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="accidentSiteId" placeholder="accident site" name="accidentSite">
+          <textarea type="text" rows="4" class="form-control" id="accidentSiteId" placeholder="accident site"
+                    name="accidentSite"></textarea>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2" for="accidentDateId">Affected Parts:</label>
-        <div class="col-sm-4">
-          <input type="date" class="form-control" id="accidentDateId" name="accidentDate">
-        </div>
-        <label class="control-label col-sm-2" for="accidentDayId">Accident Day:</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" id="accidentDayId" placeholder="Select Day" name="accidentDay">
-        </div>
-        <label class="control-label col-sm-2" for="accidentHrId">Accident Hr:</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" id="accidentHrId" name="accidentHr">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+        <div class="col-sm-offset-9 col-sm-10">
           <button type="button" class="btn btn-primary" (click)="closeIncident()">Create</button>
           <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top"
                   (click)="closeIncident()">Cancel

@@ -5,6 +5,8 @@ import { MaterialElementService } from '../security/services/material-element.se
 import { EmployeeService } from '../services/employee.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AssignmentService } from '../security/services/assignment.service';
+import {BsModalService} from 'ngx-bootstrap';
+import {MaterialTypeService} from '../services/material-type.service';
 
 @Component({
   selector: 'app-assignment',
@@ -12,7 +14,9 @@ import { AssignmentService } from '../security/services/assignment.service';
   styleUrls: ['./assignment.component.css']
 })
 export class AssignmentComponent implements OnInit {
-
+  materialTypes:[{}];
+  public equipments;
+  public modalRef;
   materials:[{}];
   employees:[{}];
   assignmentForm: FormGroup;
@@ -20,6 +24,7 @@ export class AssignmentComponent implements OnInit {
   constructor(private equipment: MaterialElementService,
               private employee: EmployeeService,
               private assignmentService: AssignmentService,
+              private materialTypeService: MaterialTypeService, private modalService: BsModalService,
               private fa:FormBuilder) {
                 this.createFormAssign();
   }
@@ -27,6 +32,10 @@ export class AssignmentComponent implements OnInit {
   ngOnInit() {
     this.equipment.getMaterial().subscribe(data => { this.materials = data});
     this.employee.getEmployees().subscribe(data => { this.employees = data});
+
+    this.equipments.getMaterialType().subscribe(data => {
+      this.materialTypes = data;
+    });
   }
 
   private createFormAssign(){
@@ -38,4 +47,18 @@ export class AssignmentComponent implements OnInit {
   }
   ngOnSubmit(){
   }
+
+    /*createMaterialType() {
+    this.modalRef = this.modalService.show(MaterialTypeAddComponent, {class: 'modal-lg'});
+    this.modalRef.content.isModal = true;
+    this.modalRef.content.closeEvent.subscribe(
+      res => this.closeMaterialType(res)
+    );
+  }
+  closeMaterialType(close: boolean): void {
+    if (close && this.modalRef) {
+      this.modalRef.hide();
+      this.modalRef.content.closeEvent.unsubscribe();
+    }
+  }*/
 }
