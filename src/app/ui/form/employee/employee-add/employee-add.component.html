@@ -14,60 +14,60 @@
         <strong>Error!</strong> Falta Lllenar algunoscambio
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="firstName">First Name:</label>
+        <label class="control-label col-sm-2">First Name:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="employee.firstName" id="firstName" placeholder="Enter First Name" name="firstName">
+          <input type="text" class="form-control" [(ngModel)]="employee.firstName" placeholder="Enter First Name" name="firstName">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+        <label class="control-label col-sm-2">Last Name:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="employee.lastName" id="lastName" placeholder="Enter Last Name" name="lastName">
+          <input type="text" class="form-control" [(ngModel)]="employee.lastName"  placeholder="Enter Last Name" name="lastName">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="ci">CI:</label>
+        <label class="control-label col-sm-2">CI:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" [(ngModel)]="employee.ci" id="ci" placeholder="Enter CI" name="ci" maxlength="7">
+          <input type="text" class="form-control" [(ngModel)]="employee.ci" placeholder="Enter CI" name="ci" maxlength="7">
         </div>
-        <label class="control-label col-sm-1" for="gender">Gender:</label>
+        <label class="control-label col-sm-1" >Gender:</label>
         <div class="col-sm-4">
-          <select class="form-control" [(ngModel)]="employee.gender" id="gender">
+          <select class="form-control" [(ngModel)]="employee.gender" name="gender">
             <option>FEMALE</option>
             <option>MALE</option>
           </select>
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="address">Address:</label>
+        <label class="control-label col-sm-2">Address:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="employee.address" id="address" placeholder="Enter address" name="address">
+          <input type="text" class="form-control" [(ngModel)]="employee.address" placeholder="Enter address" name="address">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2"  for="birthDate">date of birth:</label>
+        <label class="control-label col-sm-2">date of birth:</label>
         <div class="col-sm-4">
-          <input type="date" class="form-control" [(ngModel)]="employee.birthDate" id="birthDate" placeholder="date of birth" name="birthDate">
+          <input type="date" class="form-control" [(ngModel)]="employee.birthDate" placeholder="date of birth" name="birthDate">
         </div>
-        <label class="control-label col-sm-1" for="phone">Phone:</label>
+        <label class="control-label col-sm-1">Phone:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" [(ngModel)]="employee.phone" id="phone" placeholder="Enter Phone" name="phone">
+          <input type="text" class="form-control" [(ngModel)]="employee.phone" placeholder="Enter Phone" name="phone">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Email:</label>
+        <label class="control-label col-sm-2">Email:</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" [(ngModel)]="employee.email" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" [(ngModel)]="employee.email" placeholder="Enter email" name="email">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="typeEmployee">Employee Type:</label>
+        <label class="control-label col-sm-2">Employee Type:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="typeEmployee" placeholder="Enter Phone" name="typeEmployee">
+          <input type="text" class="form-control" [(ngModel)]="employee.employeeTypeId" placeholder="Enter Type Employee" name="employeeTypeId">
         </div>
-        <label class="control-label col-sm-1" for="salary">Salary:</label>
+        <label class="control-label col-sm-1">Salary:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" [(ngModel)]="employee.salary" id="salary" placeholder="Enter Salary" name="salary">
+          <input type="text" class="form-control" [(ngModel)]="employee.salary" placeholder="Enter Salary" name="salary">
         </div>
 
       </div>

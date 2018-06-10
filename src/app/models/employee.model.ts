@@ -9,6 +9,7 @@ export class Employee {
   email = '';
   phone = 0;
   salary = 0.0;
+  employeeTypeId = 0;
 }
 
 
