@@ -11,3 +11,5 @@ export class CreateIncident {
   accidentTime = '';
   affectedPart = '';
 }
+
+export const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];

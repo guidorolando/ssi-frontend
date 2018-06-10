@@ -19,8 +19,7 @@ export class IncidentAddComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createIncidentForm = this.fb.group({
-    });
+    this.createIncidentForm = this.fb.group({});
   }
 
   closeIncident() {
