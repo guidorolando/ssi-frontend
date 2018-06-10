@@ -11,7 +11,7 @@ fxLayoutGap="15px">
     <h3>SSI-GA Assignment</h3>
     <mat-form-field>
         <mat-select formControlName="Employee" placeholder="Employee">
-            <mat-option *ngFor="let employees of employee">{{employee.firstName}} {{employee.lastName}}</mat-option>
+            <mat-option *ngFor="let employee of employees">{{employee.firstName}} {{employee.lastName}}</mat-option>
         </mat-select>
         <mat-hint>
             <span>select employee</span>
@@ -19,7 +19,7 @@ fxLayoutGap="15px">
     </mat-form-field>
     <mat-form-field>
         <mat-select formControlName="EquipmentToAssign" placeholder="Equipment to Assign">
-            <mat-option *ngFor="let materialType of materialTypes">{{materialType.nameType}}</mat-option>
+            <mat-option *ngFor="let material of materials">{{material.name}}</mat-option>
         </mat-select>
         <mat-hint>
             <span>select Material to assign</span>
