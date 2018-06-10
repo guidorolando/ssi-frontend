@@ -28,14 +28,32 @@ export class EmployeeService extends AbstractServiceService {
       });
   }
 
-  updateEmployee(employee: Employee): Observable<Employee> {
+  updateEmployee(employee: Employee): Observable<any> {
     return this.http.put(baseURL + 'employee/' + `${employee.id}`, employee, httpOptions).pipe(
       tap(_ => this.log(`updated employee id=${employee.id}`)),
-      catchError(this.handleError<any>('updateHero'))
+      catchError(this.handleError<any>('updateEmployee'))
     );
   }
 
-  createEmployee(employee: Employee): Observable<Employee> {
-    return null;
+  /*createEmployee(employee: Employee): Observable<any> {
+    return this.http.post(baseURL + 'employee', employee, httpOptions);
+  }*/
+
+  public validate(employee: Employee): boolean {
+    return true;
+  }
+
+  createEmployee (employee: Employee): Observable<any> {
+    console.log('new employeeee:', employee);
+    employee.gender = 'MALE';
+    return this.http.post(baseURL + 'employee',  employee, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
   }
 }

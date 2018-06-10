@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {EmployeeService} from '../services/employee.service';
+import { AssignmentReportService } from '../security/services/assignment-report.service';
 
 
 @Component({
@@ -10,12 +11,15 @@ import {EmployeeService} from '../services/employee.service';
 })
 export class AssignmentReportComponent implements OnInit {
 
-  public employeesReport;
+  assignments: [{}];
 
-  constructor() {
+  constructor(private  assignmentEquipment: AssignmentReportService) {
   }
 
   ngOnInit() {
+    this.assignmentEquipment.getAssignment().subscribe(data => {
+      this.assignments = data;
+    });
   }
 
 }

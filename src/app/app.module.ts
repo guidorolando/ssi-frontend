@@ -37,9 +37,9 @@ import {
   MatRippleModule,
   MatTableModule
 } from '@angular/material';
- import {UserService} from './security/services/user.service';
- import {AuthGuard} from './security/guards/auth-guard.service';
- import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
+import {UserService} from './security/services/user.service';
+import {AuthGuard} from './security/guards/auth-guard.service';
+import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
 
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -54,7 +54,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
 import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
 import {ModelModule} from './models/model.module';
-import { AccidentComponent } from './accident/accident.component';
+import {IncidentListComponent} from './accident/incident-list/incident-list.component';
+import {IncidentAddComponent} from './accident/incident-add/incident-add.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
 import { AssignmentService } from './security/services/assignment.service';
@@ -95,7 +96,8 @@ import {MaterialTypeListComponent} from './material-type/material-type-list/mate
     MaterialTypeListComponent,
     ReportComponent,
     HomeComponent,
-    AccidentComponent,
+    IncidentListComponent,
+    IncidentAddComponent,
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
