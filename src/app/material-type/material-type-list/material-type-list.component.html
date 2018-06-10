@@ -1,0 +1,25 @@
+<!--<p>
+  material-type-list works!
+</p>-->
+<div class="col-md-6">
+  <h2> Material Type List</h2>
+  <button (click)="createMaterialType()" class="btn btn-success">Add Material Type</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Material Type Name</th>
+      <th rowspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let materialType of materialTypes$ | async">
+      <td class="hidden">{{materialType.id}}</td>
+      <td>{{materialType.name}}</td>
+      <td><button class="btn btn-danger" (click)="deleteMaterialType(materialType)"> Delete</button>
+        <button class="btn btn-info" (click)="updateMaterialType(materialType)" style="margin-left: 20px;"> Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
