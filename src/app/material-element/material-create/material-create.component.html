@@ -25,12 +25,11 @@ fxLayoutGap="10px">
             <input matInput formControlName="productiveLife"
                    type="text"
                    placeholder="productive Life">
-                   <mat-hint>in years</mat-hint>
+                   <mat-hint>in months</mat-hint>
         </mat-input-container>
         <mat-form-field>
             <mat-select formControlName="EquipmentToAssign" placeholder="Equipment type">
-                <mat-option>seguridad</mat-option>
-                <mat-option>adicional</mat-option>
+                <mat-option *ngFor="let materialType of materialTypes" [value]="materialType.nameType">{{materialType.nameType}}</mat-option>
             </mat-select>
             <mat-hint>
                 <span>select Material type</span>

@@ -8,10 +8,10 @@ import {MaterialElementService} from '../../security/services/material-element.s
   styleUrls: ['./material-create.component.css']
 })
 export class MaterialCreateComponent implements OnInit {
-  materialType: [{}];
+  materialTypes: [{}];
   constructor(private materialElement: MaterialElementService) { }
 
   ngOnInit() {
-    this.materialElement.getMaterialType().subscribe(data => { this.materialType = data; });
+    this.materialElement.getMaterialType().subscribe(data => { this.materialTypes = data; });
   }
 }
