@@ -15,7 +15,7 @@
     <tbody>
     <tr *ngFor="let materialType of materialTypes$ | async">
       <td class="hidden">{{materialType.id}}</td>
-      <td>{{materialType.name}}</td>
+      <td>{{materialType.nameType}}</td>
       <td><button class="btn btn-danger" (click)="deleteMaterialType(materialType)"> Delete</button>
         <button class="btn btn-info" (click)="updateMaterialType(materialType)" style="margin-left: 20px;"> Edit</button>
       </td>
