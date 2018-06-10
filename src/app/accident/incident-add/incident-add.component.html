@@ -15,7 +15,9 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="employeeId">Select Employee:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="employeeId" placeholder="search employee" name="searchEmployee">
+          <select id="employeeId" class="form-control" (change)="fillInformation($event.target.selectedIndex)">
+            <option *ngFor="let employee of employees$ | async">{{employee.firstName}} {{employee.lastName}} {{employee.ci}}</option>
+          </select>
         </div>
       </div>
 
@@ -74,13 +76,13 @@
         <label class="control-label col-sm-2" for="incidentName">Incident Type:</label>
         <div class="col-sm-4">
           <select id="incidentName" class="form-control">
-            <option></option>
+            <option *ngFor="let incidentType of incidentTypes$ | async">{{incidentType.name}}</option>
           </select>
         </div>
         <label class="control-label col-sm-2" for="incidentAgent">Incident Agent:</label>
         <div class="col-sm-4">
           <select id="incidentAgent" class="form-control">
-            <option></option>
+            <option *ngFor="let incidentAgent of incidentAgents$ | async">{{incidentAgent.agentName}}</option>
           </select>
         </div>
       </div>
