@@ -20,7 +20,7 @@ export class IncidentTypeService extends AbstractServiceService{
   getIncidentTypes(): Observable<any> {
     return this.http.get<any>(baseURL + 'IncidentType', {responseType: 'json'})
       .map((data) => {
-        return data.data;
+        return data;
       })
       .catch(error => {
         console.log('error:' + error);

@@ -35,6 +35,13 @@ export class EmployeeService extends AbstractServiceService {
     );
   }
 
+  getEmployeeById(employeeId): Observable<any> {
+    return this.http.get(baseURL + 'employee/' + `${employeeId}`).pipe(
+      tap(_ => this.log(`get employee by id=${employeeId}`)),
+      catchError(this.handleError<any>('updateEmployee'))
+    );
+  }
+
   /*createEmployee(employee: Employee): Observable<any> {
     return this.http.post(baseURL + 'employee', employee, httpOptions);
   }*/
