@@ -29,4 +29,15 @@ export class IncidentService extends AbstractServiceService {
   updateIncident(incident: any): Observable<any> {
     return null;
   }
+  saveIncident(incident) {
+    return this.http.post(baseURL + 'Incident/createIncident',  incident, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
+  }
 }

@@ -8,6 +8,8 @@ import {IncidentType} from '../../models/incident-type.model';
 import {IncidentTypeService} from '../../services/incident-type.service';
 import {EmployeeService} from '../../services/employee.service';
 import {Employee} from '../../models/employee.model';
+import {CreateIncident} from '../../models/create-incident.model';
+import {IncidentService} from '../../services/incident.service';
 
 @Component({
   selector: 'app-incident-add',
@@ -20,7 +22,7 @@ export class IncidentAddComponent implements OnInit {
   employees$: Observable<IncidentAgent[]>;
   incidentAgent: IncidentAgent;
   incidentType: IncidentType;
-  employee: any;
+  employee: Employee;
   employeeId;
   createIncidentForm: FormGroup;
   public closeEvent = new EventEmitter<boolean>();
@@ -30,14 +32,15 @@ export class IncidentAddComponent implements OnInit {
     private fb: FormBuilder,
     private incidentAgentService: IncidentAgentService,
     private incidentTypeService: IncidentTypeService,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private incidentService: IncidentService
   ) {
     this.employeeId = 0;
+    this.employee = new Employee();
   }
 
   ngOnInit() {
-    this.createIncidentForm = this.fb.group({
-    });
+    this.createIncidentForm = this.fb.group(new CreateIncident());
     this.getEmployees();
     this.getIncidentAgents();
     this.getIncidentTypes();
@@ -45,6 +48,7 @@ export class IncidentAddComponent implements OnInit {
 
   closeIncident() {
     this.closeEvent.next(true);
+    console.log(this.createIncidentForm.value);
   }
   getEmployees() {
     this.employees$ = this.employeeService.getEmployees();
@@ -65,11 +69,17 @@ export class IncidentAddComponent implements OnInit {
     this.incidentType = incidentType;
   }
   fillInformation(employeeId) {
+    this.employeeId = employeeId;
     this.getEmployeeById(employeeId);
   }
   getEmployeeById (employeeId) {
     this.employeeService.getEmployeeById(employeeId).subscribe(data => {
       this.employee = data.data;
+    });
+  }
+  onSubmit() {
+    this.incidentService.saveIncident(this.createIncidentForm.value).subscribe(data => {
+      console.log(data);
     });
   }
 }

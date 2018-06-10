@@ -3,9 +3,9 @@ export class CreateIncident {
   employeeId = 0;
   incidentTypeId = 0;
   accidentAgentId = 0;
-  lesionTypeId = 0;
+  lesionTypeId = 1;
   accidentSite = '';
-  workingTurn = '';
+  workingTurn = 'EXTRA_HOURS';
   accidentDate = '';
   accidentDay = '';
   accidentTime = '';

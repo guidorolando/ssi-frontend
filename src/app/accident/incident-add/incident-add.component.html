@@ -15,8 +15,8 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="employeeId">Select Employee:</label>
         <div class="col-sm-9">
-          <select id="employeeId" class="form-control" (change)="fillInformation($event.target.selectedIndex)">
-            <option *ngFor="let employee of employees$ | async">{{employee.firstName}} {{employee.lastName}} {{employee.ci}}</option>
+          <select id="employeeId" class="form-control" (change)="fillInformation($event.target.selectedIndex)" formControlName="employeeId">
+            <option *ngFor="let employee of employees$ | async" [ngValue]="employee.id">{{employee.firstName}} {{employee.lastName}} {{employee.ci}}</option>
           </select>
         </div>
       </div>
@@ -25,12 +25,12 @@
         <label class="control-label col-sm-2" for="employeeFirstNameId">Employee First Name:</label>
         <div class="col-sm-4">
           <input type="text" class="form-control" id="employeeFirstNameId" placeholder="employee first name"
-                 name="employeeFirstName" disabled="disabled">
+                 name="employeeFirstName" disabled="disabled" value="{{employee.firstName}}">
         </div>
         <label class="control-label col-sm-2" for="employeeLastNameId">Employee Last Name:</label>
         <div class="col-sm-4">
           <input type="text" class="form-control" id="employeeLastNameId" placeholder="employee last name"
-                 name="employeeLastName" disabled="disabled">
+                 name="employeeLastName" disabled="disabled" value="{{employee.lastName}}">
         </div>
       </div>
 
@@ -38,29 +38,29 @@
         <label class="control-label col-sm-2" for="employeeCiId">Employee CI:</label>
         <div class="col-sm-4">
           <input type="text" class="form-control" id="employeeCiId" placeholder="employee ci" name="employeeCi"
-                 disabled="disabled">
+                 disabled="disabled" value="{{employee.ci}}">
         </div>
         <label class="control-label col-sm-2" for="employeeGenderId">Employee Gender:</label>
         <div class="col-sm-4">
           <input type="text" class="form-control" id="employeeGenderId" placeholder="employee gender"
-                 name="employeeGender" disabled="disabled">
+                 name="employeeGender" disabled="disabled" value="{{employee.gender}}">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2" for="accidentDateId">Accident Date:</label>
+        <label class="control-label col-sm-2" for="accidentDateId" >Accident Date:</label>
         <div class="col-sm-2">
-          <input type="date" class="form-control" id="accidentDateId" name="accidentDate">
+          <input type="date" class="form-control" id="accidentDateId" name="accidentDate" formControlName="accidentDate">
         </div>
 
         <label class="control-label col-sm-2" for="accidentHrId">Accident Hr:</label>
         <div class="col-sm-2">
-          <input type="time" class="form-control" name="hora" min="18:00" max="21:00" step="3600" id="accidentHrId">
+          <input type="time" class="form-control" name="hora" min="18:00" max="21:00" step="3600" id="accidentHrId" formControlName="accidentTime">
         </div>
 
         <label class="control-label col-sm-2" for="accidentDayId">Accident Day:</label>
         <div class="col-sm-2">
-          <select id="accidentDayId" class="form-control">
+          <select id="accidentDayId" class="form-control" formControlName="accidentDay">
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
@@ -75,14 +75,14 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="incidentName">Incident Type:</label>
         <div class="col-sm-4">
-          <select id="incidentName" class="form-control">
-            <option *ngFor="let incidentType of incidentTypes$ | async">{{incidentType.name}}</option>
+          <select id="incidentName" class="form-control" formControlName="incidentTypeId">
+            <option *ngFor="let incidentType of incidentTypes$ | async" [ngValue]="incidentType.id">{{incidentType.name}}</option>
           </select>
         </div>
         <label class="control-label col-sm-2" for="incidentAgent">Incident Agent:</label>
         <div class="col-sm-4">
-          <select id="incidentAgent" class="form-control">
-            <option *ngFor="let incidentAgent of incidentAgents$ | async">{{incidentAgent.agentName}}</option>
+          <select id="incidentAgent" class="form-control" formControlName="accidentAgentId">
+            <option *ngFor="let incidentAgent of incidentAgents$ | async" [ngValue]="incidentAgent.id">{{incidentAgent.agentName}}</option>
           </select>
         </div>
       </div>
@@ -91,18 +91,18 @@
         <label class="control-label col-sm-2" for="affectedPartsId">Affected Parts:</label>
         <div class="col-sm-4">
           <textarea type="text" rows="4" class="form-control" id="affectedPartsId" placeholder="affected parts"
-                    name="affectedParts"></textarea>
+                    name="affectedParts" formControlName="affectedPart"></textarea>
         </div>
         <label class="control-label col-sm-2" for="accidentSiteId">Accident Site:</label>
         <div class="col-sm-4">
           <textarea type="text" rows="4" class="form-control" id="accidentSiteId" placeholder="accident site"
-                    name="accidentSite"></textarea>
+                    name="accidentSite" formControlName="accidentSite"></textarea>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-offset-9 col-sm-10">
-          <button type="button" class="btn btn-primary" (click)="closeIncident()">Create</button>
+          <button type="submit" class="btn btn-primary" >Create</button>
           <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top"
                   (click)="closeIncident()">Cancel
           </button>
