@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
-import {EmployeeService} from '../../../../services/employee.service';
+
+import {EmployeeService} from '../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {Employee, gender} from '../../../../models/employee.model';
+import {Employee, gender} from '../../models/employee.model';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-add-employee',

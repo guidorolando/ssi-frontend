@@ -5,7 +5,7 @@ export class Employee {
   address = '';
   ci = '';
   birthDate = '';
-  gender = 'MALE';
+  gender = '';
   email = '';
   phone = 0;
   salary = 0.0;
