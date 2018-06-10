@@ -7,11 +7,13 @@ fxLayoutAlign.sm="start center"
 fxLayoutAlign.gt-sm="center center"
 fxLayoutGap="15px">
 <div fxFlex fxFlex.gt-sm="70%">
+    <br><br><br>
     <span><img src="../../assets/images/logoSSI-GA.png" height=73 width=90></span>
     <h3>SSI-GA Assignment</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" id="formAssign">
     <mat-form-field>
         <mat-select formControlName="Employee" placeholder="Employee">
-            <mat-option *ngFor="let employee of employees">{{employee.firstName}} {{employee.lastName}}</mat-option>
+            <mat-option *ngFor="let employee of employees" [value]="employee.firstName">{{employee.firstName}} {{employee.lastName}}</mat-option>
         </mat-select>
         <mat-hint>
             <span>select employee</span>
@@ -19,7 +21,7 @@ fxLayoutGap="15px">
     </mat-form-field>
     <mat-form-field>
         <mat-select formControlName="EquipmentToAssign" placeholder="Equipment to Assign">
-            <mat-option *ngFor="let material of materials">{{material.name}}</mat-option>
+            <mat-option *ngFor="let material of materials" [value]="material.name">{{material.name}}</mat-option>
         </mat-select>
         <mat-hint>
             <span>select Material to assign</span>
@@ -34,6 +36,7 @@ fxLayoutGap="15px">
     </mat-input-container>
     <br>
     <button mat-button type="button" class="btn btn-primary">Assign to employee</button>
+</form>
 </div>
 <div fxFlex fxFlex.gt-sm="20%">
 <img src="/assets/images/safety-work-icon.jpg" alt="icon" width="300" height="300">
