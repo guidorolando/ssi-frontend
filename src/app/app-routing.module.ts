@@ -17,6 +17,8 @@ import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplet
 import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
 import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
 import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
+import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
+import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
 
 const routes: Routes = [
   {
@@ -66,6 +68,14 @@ const routes: Routes = [
   {
     path: 'material',
     component: MaterialElementComponent
+  },
+  {
+    path: 'material-type-add',
+    component: MaterialTypeAddComponent
+  },
+  {
+    path: 'material-type-list',
+    component: MaterialTypeListComponent
   },
   {
     path: 'report',

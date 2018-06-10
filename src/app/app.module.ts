@@ -70,6 +70,9 @@ import {MaterialUpdateComponent} from './material-element/material-update/materi
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
 import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
 import {BsModalService, ModalModule} from 'ngx-bootstrap';
+import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
+import {MaterialTypeService} from './services/material-type.service';
+import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +91,8 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap';
     EmployeeDetailComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
+    MaterialTypeAddComponent,
+    MaterialTypeListComponent,
     ReportComponent,
     HomeComponent,
     AccidentComponent,
@@ -121,7 +126,8 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap';
     MaterialElementService,
     AssignmentService,
     AssignmentReportService,
-    BsModalService
+    BsModalService,
+    MaterialTypeService
   ],
   bootstrap: [AppComponent]
 })
