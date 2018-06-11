@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Employee} from '../../../../models/employee.model';
-import {EmployeeService} from '../../../../services/employee.service';
+import {Employee} from '../../models/employee.model';
+import {EmployeeService} from '../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';

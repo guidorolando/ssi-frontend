@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges} from '@angular/core';
-import {Employee} from '../../../../models/employee.model';
+import {Employee} from '../../models/employee.model';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {EmployeeService} from '../../../../services/employee.service';
+import {EmployeeService} from '../../services/employee.service';
 
 @Component({
   selector: 'app-employee-detail',
@@ -40,12 +40,12 @@ export class EmployeeDetailComponent implements OnChanges {
   }
 
   onSubmit() {
-    this.employee = this.prepareSaveEmployee();
+    // this.employee = this.prepareSaveEmployee();
     this.employeeService.updateEmployee(this.employee).subscribe();
     this.rebuildForm();
   }
 
-  prepareSaveEmployee(): Employee {
+  /*prepareSaveEmployee(): Employee {
     const formModel = this.employeeForm.value;
     const saveEmployee: Employee = {
       id: this.employee.id,
@@ -60,7 +60,7 @@ export class EmployeeDetailComponent implements OnChanges {
       salary: formModel.salary as number
     };
     return saveEmployee;
-  }
+  }*/
   revert() {
     this.rebuildForm();
   }
