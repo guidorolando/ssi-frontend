@@ -74,6 +74,8 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap';
 import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
 import {MaterialTypeService} from './services/material-type.service';
 import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
+import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-type-list.component';
+import {EmployeeTypeService} from './services/employee-type.service';
 
 @NgModule({
   declarations: [
@@ -90,6 +92,7 @@ import {MaterialTypeListComponent} from './material-type/material-type-list/mate
     EmployeeAddComponent,
     EmployeeEditComponent,
     EmployeeDetailComponent,
+    EmployeeTypeListComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     MaterialTypeAddComponent,
@@ -129,7 +132,8 @@ import {MaterialTypeListComponent} from './material-type/material-type-list/mate
     AssignmentService,
     AssignmentReportService,
     BsModalService,
-    MaterialTypeService
+    MaterialTypeService,
+    EmployeeTypeService
   ],
   bootstrap: [AppComponent]
 })

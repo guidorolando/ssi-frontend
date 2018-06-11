@@ -20,6 +20,7 @@ import {EmployeeEditComponent} from './employee/employee-edit/employee-edit.comp
 import {EmployeeAddComponent} from './employee/employee-add/employee-add.component';
 import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
 import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
+import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-type-list.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'employee-detail',
     component: EmployeeDetailComponent
+  },
+  {
+    path: 'employee-type-list',
+    component: EmployeeTypeListComponent
   },
   {
     path: 'incident-type-list',

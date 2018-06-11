@@ -63,7 +63,14 @@
       <div class="form-group">
         <label class="control-label col-sm-2">Employee Type:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" [(ngModel)]="employee.employeeTypeId" placeholder="Enter Type Employee" name="employeeTypeId">
+          <select class="form-control" [(ngModel)]="employee.employeeTypeId" name="employeeTypeId">
+            <!--<option *ngFor="let employeeType of getEmployeesType()">{{employeeType.typeName}}</option>-->
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
         </div>
         <label class="control-label col-sm-1">Salary:</label>
         <div class="col-sm-4">
