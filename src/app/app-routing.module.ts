@@ -4,7 +4,7 @@ import {AssignmentComponent} from './assignment/assignment.component';
 import {MaterialElementComponent} from './material-element/material-element.component';
 import {AssignmentReportComponent} from './assignment-report/assignment-report.component';
 import {HomeComponent} from './home/home.component';
-import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
+import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
 import {ReportComponent} from './report/report.component';
 import {AboutComponent} from './about/about.component';
 import {IncidentListComponent} from './accident/incident-list/incident-list.component';
@@ -15,11 +15,12 @@ import {MaterialCreateComponent} from './material-element/material-create/materi
 import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
 import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
 import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
-import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
-import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
+import {EmployeeDetailComponent} from './employee/employee-detail/employee-detail.component';
+import {EmployeeEditComponent} from './employee/employee-edit/employee-edit.component';
+import {EmployeeAddComponent} from './employee/employee-add/employee-add.component';
 import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
 import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
+import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-type-list.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'employee-detail',
     component: EmployeeDetailComponent
+  },
+  {
+    path: 'employee-type-list',
+    component: EmployeeTypeListComponent
   },
   {
     path: 'incident-type-list',

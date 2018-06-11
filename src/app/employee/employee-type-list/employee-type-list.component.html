@@ -1,0 +1,23 @@
+<div class="col-md-6">
+  <h2> Employee List</h2>
+  <button  class="btn btn-success">Add Type Employee</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Name Type Employee</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employeeType of employeeTypes$ | async">
+      <td class="hidden">{{employeeType.typeId}}</td>
+      <td>{{employeeType.typeName}}</td>
+      <td>{{employeeType.description}}</td>
+      <td><button class="btn btn-danger" > Delete</button>
+        <button class="btn btn-info"  style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

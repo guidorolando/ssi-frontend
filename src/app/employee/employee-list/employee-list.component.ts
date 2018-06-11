@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Employee} from '../../../../models/employee.model';
-import {EmployeeService} from '../../../../services/employee.service';
+import {Employee} from '../../models/employee.model';
+import {EmployeeService} from '../../services/employee.service';
 import {finalize} from 'rxjs/operators';
 import {EmployeeAddComponent} from '../employee-add/employee-add.component';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
