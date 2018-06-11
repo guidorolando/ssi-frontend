@@ -76,6 +76,9 @@ import {MaterialTypeService} from './services/material-type.service';
 import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
 import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-type-list.component';
 import {EmployeeTypeService} from './services/employee-type.service';
+import { AreaCreateComponent } from './area-create/area-create.component';
+import { AreaListComponent } from './area-list/area-list.component';
+import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
 
 @NgModule({
   declarations: [
@@ -99,13 +102,17 @@ import {EmployeeTypeService} from './services/employee-type.service';
     MaterialTypeListComponent,
     ReportComponent,
     HomeComponent,
-    IncidentListComponent,
-    IncidentAddComponent,
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
     MaterialDeleteComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    MaterialDeleteComponent,
+    AutocompleteComponent,
+    MaterialDeleteComponent,
+    AreaCreateComponent,
+    AreaListComponent,
+    CapacityCreateComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -116,7 +123,6 @@ import {EmployeeTypeService} from './services/employee-type.service';
     ServiceModule.forRoot(),
    // SecurityModule,
     AppRoutingModule,
-    ModalModule.forRoot(),
     MatStepperModule,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
@@ -133,7 +139,8 @@ import {EmployeeTypeService} from './services/employee-type.service';
     AssignmentReportService,
     BsModalService,
     MaterialTypeService,
-    EmployeeTypeService
+    EmployeeTypeService,
+    AssignmentReportService
   ],
   bootstrap: [AppComponent]
 })

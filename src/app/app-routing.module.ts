@@ -21,7 +21,9 @@ import {EmployeeAddComponent} from './employee/employee-add/employee-add.compone
 import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
 import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
 import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-type-list.component';
-
+import {AreaCreateComponent} from './area-create/area-create.component';
+import {CapacityCreateComponent} from './capacity-create/capacity-create.component';
+import {AreaListComponent} from './area-list/area-list.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -76,25 +78,13 @@ const routes: Routes = [
     component: MaterialElementComponent
   },
   {
-    path: 'material-type-add',
-    component: MaterialTypeAddComponent
-  },
-  {
-    path: 'material-type-list',
-    component: MaterialTypeListComponent
-  },
-  {
     path: 'report',
     component: ReportComponent
   },
-  {
-    path: 'incident-list',
-    component: IncidentListComponent
-  },
-  {
-    path: 'incident-add',
-    component: IncidentAddComponent
-  },
+  // {
+  //   path: 'accident',
+  //   component: AccidentComponent
+  // },
   {
     path: 'oestructure',
     component: OEstructureComponent
@@ -112,12 +102,21 @@ const routes: Routes = [
     component: MaterialUpdateComponent
   },
   {
-    path: 'delete-mat',
-    component: MaterialDeleteComponent
+    path: 'area-create',
+    component: AreaCreateComponent
   },
   {
-    path: 'autocomplete',
-    component: AutocompleteComponent
+    path: 'area-list',
+    component: AreaListComponent
+  },
+  {
+    path: 'capacity-create',
+    component: CapacityCreateComponent
+  },
+
+  {
+    path: 'delete-mat',
+    component: MaterialDeleteComponent
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
