@@ -74,6 +74,10 @@ import {BsModalService, ModalModule} from 'ngx-bootstrap';
 import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
 import {MaterialTypeService} from './services/material-type.service';
 import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
+import { AreaCreateComponent } from './area-create/area-create.component';
+import { AreaListComponent } from './area-list/area-list.component';
+import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
+
 
 @NgModule({
   declarations: [
@@ -96,13 +100,17 @@ import {MaterialTypeListComponent} from './material-type/material-type-list/mate
     MaterialTypeListComponent,
     ReportComponent,
     HomeComponent,
-    IncidentListComponent,
-    IncidentAddComponent,
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
     MaterialDeleteComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    MaterialDeleteComponent,
+    AutocompleteComponent,
+    MaterialDeleteComponent,
+    AreaCreateComponent,
+    AreaListComponent,
+    CapacityCreateComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -113,7 +121,6 @@ import {MaterialTypeListComponent} from './material-type/material-type-list/mate
     ServiceModule.forRoot(),
    // SecurityModule,
     AppRoutingModule,
-    ModalModule.forRoot(),
     MatStepperModule,
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
@@ -127,9 +134,7 @@ import {MaterialTypeListComponent} from './material-type/material-type-list/mate
     AdminAuthGuard,
     MaterialElementService,
     AssignmentService,
-    AssignmentReportService,
-    BsModalService,
-    MaterialTypeService
+    AssignmentReportService
   ],
   bootstrap: [AppComponent]
 })
