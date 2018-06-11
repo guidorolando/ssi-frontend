@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EmployeeAddComponent} from '../ui/form/employee/employee-add/employee-add.component';
+import {EmployeeAddComponent} from '../employee/employee-add/employee-add.component';
 import {EmployeeService} from '../services/employee.service';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {MaterialTypeAddComponent} from '../material-type/material-type-add/material-type-add.component';

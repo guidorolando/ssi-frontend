@@ -52,7 +52,6 @@ export class EmployeeService extends AbstractServiceService {
 
   createEmployee (employee: Employee): Observable<any> {
     console.log('new employeeee:', employee);
-    employee.gender = 'MALE';
     return this.http.post(baseURL + 'employee',  employee, httpOptions)
       .map(response => response)
       .map((data) => {
