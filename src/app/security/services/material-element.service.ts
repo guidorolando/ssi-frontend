@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { baseURL } from '../../shared/baseurl';
+import { Material } from '../../models/material.model';
 
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable()
 export class MaterialElementService {
@@ -37,5 +41,20 @@ export class MaterialElementService {
       console.log('error: ' + error);
       return error;
     });
+  }
+
+  createMaterial (material: Material): Observable<any> {
+    console.log('new material:', material);
+    //materialType.id = '1';
+    const params = JSON.stringify(material);
+    return this.http.post(baseURL + 'material',material, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
   }
 }
