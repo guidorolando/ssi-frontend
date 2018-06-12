@@ -2,11 +2,11 @@
         <div class="row">
         <div class="container col-md-7">
             <br><br><br>
-                <form class="col-md-10"(ngSubmit)="onSubmit()" #MateForm="ngForm">
+                <form class="col-md-10"#MateForm="ngForm">
                         <div class="row">
                         <div class="form-group" class="col-sm-4">
                             <label class="control-label col-sm-2" for="name">Name Material:</label>
-                            <input [(ngModel)]="newMaterial.name"
+                            <input [(ngModel)]="material.name"
                                    name="name"
                                    #name ="ngModel"
                                    type="text"
@@ -16,7 +16,7 @@
                         <div class="row">
                         <div class="form-group" class="col-sm-4">
                             <label class="control-label col-sm-2" for="matDescription">Description:</label>
-                            <input [(ngModel)]="newMaterial.matDescription"
+                            <input [(ngModel)]="material.matDescription"
                                    name="matDescription"
                                    #matDescription="ngModel"
                                    type="text"
@@ -25,7 +25,7 @@
                         <div class="row">
                         <div class="form-group" class="col-sm-4">
                             <label class="control-label col-sm-2" for="vidaUtil">Productive Life:</label>
-                            <input [(ngModel)]="newMaterial.vidaUtil" 
+                            <input [(ngModel)]="material.vidaUtil" 
                                    #vidaUtil="ngModel"
                                    name="vidaUtil"
                                    type="text"
@@ -34,12 +34,12 @@
                         <div class="row">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="materialType">Select Equipment type:</label><br><br>
-                            <select [(ngModel)]="newMaterial.materialType" #materialType="ngModel" name="materialType" placeholder="Equipment type">
+                            <select [(ngModel)]="material.materialTypeId" #materialTypeId="ngModel" name="materialType" placeholder="Equipment type">
                                 <option *ngFor="let materialType of materialTypes" [value]="materialType.id">{{materialType.nameType}}</option>
                             </select>
                         </div>
                         </div>
-                        <input class="btn btn-primary" type="button" value="Submit"/>
+                        <input class="btn btn-primary" type="button" (click)="onSubmit()" value="Save"/>
                         </form>
         </div>
         <div class="col-md-3 pull-right">

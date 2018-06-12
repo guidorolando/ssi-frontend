@@ -44,10 +44,8 @@ export class MaterialElementService {
   }
 
   createMaterial (material: Material): Observable<any> {
-    console.log('new material:', material);
-    //materialType.id = '1';
-    const params = JSON.stringify(material);
-    return this.http.post(baseURL + 'material',material, httpOptions)
+    console.log(baseURL);
+    return this.http.post(baseURL + 'Material/',material, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;
