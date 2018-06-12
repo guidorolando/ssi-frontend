@@ -7,6 +7,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AssignmentService } from '../security/services/assignment.service';
 import {BsModalService} from 'ngx-bootstrap';
 import {MaterialTypeService} from '../services/material-type.service';
+import { Assignment } from '../models/assignment.model';
+import { Material } from '../models/material.model';
+import { Employee } from '../models/employee.model';
 
 @Component({
   selector: 'app-assignment',
@@ -14,38 +17,23 @@ import {MaterialTypeService} from '../services/material-type.service';
   styleUrls: ['./assignment.component.css']
 })
 export class AssignmentComponent implements OnInit {
-  materialTypes:[{}];
-  public equipments;
-  public modalRef;
-  materials:[{}];
-  employees:[{}];
-  assignmentForm: FormGroup;
+  materials:Material[];
+  employees:Employee [];
+  assignment: Assignment;
 
   constructor(private equipment: MaterialElementService,
               private employee: EmployeeService,
-              private assignmentService: AssignmentService,
-              private materialTypeService: MaterialTypeService, private modalService: BsModalService,
-              private fa:FormBuilder) {
-                this.createFormAssign();
+              private assignmentService: AssignmentService, private modalService: BsModalService,) {
+              this.assignment=new Assignment();
   }
 
   ngOnInit() {
     this.equipment.getMaterial().subscribe(data => { this.materials = data});
     this.employee.getEmployees().subscribe(data => { this.employees = data});
-
-    this.equipments.getMaterialType().subscribe(data => {
-      this.materialTypes = data;
-    });
   }
 
-  private createFormAssign(){
-    this.assignmentForm =this.fa.group({
-      firstname:['',Validators.required],
-      name:['',Validators.required],
-      quantity:['',Validators.required]
-    });
-  }
-  ngOnSubmit(){
+  onSubmit(){
+    console.log(this.assignment);
   }
 
     /*createMaterialType() {

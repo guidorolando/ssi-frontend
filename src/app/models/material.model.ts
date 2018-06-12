@@ -1,7 +1,10 @@
+import { MaterialType } from './material-type.model'
+
 export class Material {
   id = 0;
   name = '';
-  vidaUtil = '';
+  vidaUtil = 0;
   matDescription = '';
-  materilaType = '';
+  materialType: MaterialType;
+  materialTypeId=0;
 }
