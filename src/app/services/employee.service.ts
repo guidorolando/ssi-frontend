@@ -20,6 +20,7 @@ export class EmployeeService extends AbstractServiceService {
   getEmployees(): Observable<any> {
     return this.http.get<any>(baseURL + 'employee', {responseType: 'json'})
       .map((data) => {
+        console.log('employee List ', data.data);
         return data.data;
       })
       .catch(error => {
@@ -41,10 +42,6 @@ export class EmployeeService extends AbstractServiceService {
       catchError(this.handleError<any>('updateEmployee'))
     );
   }
-
-  /*createEmployee(employee: Employee): Observable<any> {
-    return this.http.post(baseURL + 'employee', employee, httpOptions);
-  }*/
 
   public validate(employee: Employee): boolean {
     return true;
