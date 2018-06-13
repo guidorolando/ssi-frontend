@@ -5,7 +5,7 @@ export class Assignment {
     id = 0;
     material:Material;
     employee: Employee;
-    assignmentDate = '';
+    assignmentDate = Date();
     quantity = '';
     materialId=0;
     employeeId=0;

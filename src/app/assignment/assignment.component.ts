@@ -6,7 +6,6 @@ import { EmployeeService } from '../services/employee.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AssignmentService } from '../security/services/assignment.service';
 import {BsModalService} from 'ngx-bootstrap';
-import {MaterialTypeService} from '../services/material-type.service';
 import { Assignment } from '../models/assignment.model';
 import { Material } from '../models/material.model';
 import { Employee } from '../models/employee.model';
@@ -17,24 +16,48 @@ import { Employee } from '../models/employee.model';
   styleUrls: ['./assignment.component.css']
 })
 export class AssignmentComponent implements OnInit {
-  materials:Material[];
+  materials:Material [];
   employees:Employee [];
   assignment: Assignment;
 
-  constructor(private equipment: MaterialElementService,
+  constructor(private material: MaterialElementService,
               private employee: EmployeeService,
-              private assignmentService: AssignmentService, private modalService: BsModalService,) {
+              private assignmentService: AssignmentService, private modalService: BsModalService)
+  {
               this.assignment=new Assignment();
   }
 
   ngOnInit() {
-    this.equipment.getMaterial().subscribe(data => { this.materials = data});
+    this.material.getMaterial().subscribe(data => { this.materials = data});
     this.employee.getEmployees().subscribe(data => { this.employees = data});
   }
 
   onSubmit(){
-    console.log(this.assignment);
+    console.log('this assigment:', this.assignment);
+    //console.log('Material:::::::::::::::::::::',this.material);
+    this.assignment.assignmentDate ="2018-06-12T04:00:00.000+0000";
+    this.assignment.employee = this.employeeSelect(this.assignment.employeeId);
+    console.log('assignment:employee::::::::::::::::::::',this.assignment.employee);
+    this.assignment.material = this.materialSelect(this.assignment.materialId);
+    console.log('assignment:material::::::::::::::::::::',this.assignment.material);
+    this.assignmentService.saveAssignment(this.assignment).subscribe(
+     response=>{
+       console.log(response);
+       this.assignment = new Assignment();
+     },error=>{
+       console.log(<any> error)  
+     }
+   );
   }
+
+  materialSelect(idselected : number): Material{
+    return this.materials.find(x=>x.id==idselected);
+    //console.log(this.materials.find(x=>x.id==idselected));
+    }
+
+  employeeSelect(idselected : number): Employee{
+      return this.employees.find(x=>x.id==idselected);
+      }
 
     /*createMaterialType() {
     this.modalRef = this.modalService.show(MaterialTypeAddComponent, {class: 'modal-lg'});

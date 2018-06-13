@@ -16,7 +16,7 @@ export class MaterialElementService {
 
   getMaterial(): Observable<any> {
     return this.http.get(baseURL + 'Material').map((res) => {console.log('ruta: ', baseURL + 'material');
-    console.log('data: ', res);
+    console.log('material: ', res);
         return res;
       }).catch(error => {
         console.log('error: ' + error);
