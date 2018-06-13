@@ -26,6 +26,10 @@ import {CapacityCreateComponent} from './capacity-create/capacity-create.compone
 import {AreaListComponent} from './area-list/area-list.component';
 import {CreatePersonalInformationComponent} from './create-personal-information/create-personal-information.component';
 import {PersonalListComponent} from "./personal-list/personal-list.component";
+import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
+import {EmployeeAddComponent} from './employee/employee-add/employee-add.component';
+import {EmployeeEditComponent} from './employee/employee-edit/employee-edit.component';
+import {EmployeeDetailComponent} from './employee/employee-detail/employee-detail.component';
 
 const routes: Routes = [
   {
@@ -48,22 +52,22 @@ const routes: Routes = [
     path: 'assignment-report',
     component: AssignmentReportComponent
   },
-  // {
-  //   path: 'employee-list',
-  //   component: EmployeeListComponent
-  // },
-  // {
-  //   path: 'employee-add',
-  //   component: EmployeeAddComponent
-  // },
-  // {
-  //   path: 'employee-edit',
-  //   component: EmployeeEditComponent
-  // },
-  // {
-  //   path: 'employee-detail',
-  //   component: EmployeeDetailComponent
-  // },
+  {
+    path: 'employee-list',
+    component: EmployeeListComponent
+  },
+  {
+    path: 'employee-add',
+    component: EmployeeAddComponent
+  },
+  {
+    path: 'employee-edit',
+    component: EmployeeEditComponent
+  },
+  {
+    path: 'employee-detail',
+    component: EmployeeDetailComponent
+  },
   {
     path: 'employee-type-list',
     component: EmployeeTypeListComponent
