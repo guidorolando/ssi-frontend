@@ -77,6 +77,14 @@ const routes: Routes = [
     component: AssignmentComponent
   },
   {
+    path: 'material-type-add',
+    component: MaterialTypeAddComponent
+  },
+  {
+    path: 'material-type-list',
+    component: MaterialTypeListComponent
+  },
+  {
     path: 'material',
     component: MaterialElementComponent
   },

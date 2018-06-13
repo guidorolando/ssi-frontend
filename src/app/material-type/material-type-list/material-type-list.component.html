@@ -1,7 +1,8 @@
 <!--<p>
   material-type-list works!
 </p>-->
-<div class="col-md-6">
+<div class="col-md-6" id="content-material-type">
+  <div id="material-type-list">
   <h2> Material Type List</h2>
   <button (click)="createMaterialType()" class="btn btn-success">Add Material Type</button>
   <table class="table table-striped">
@@ -9,7 +10,7 @@
     <tr>
       <th class="hidden">Id</th>
       <th>Material Type Name</th>
-      <th rowspan="2">Action</th>
+      <th align="center">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -22,4 +23,10 @@
     </tr>
     </tbody>
   </table>
+  </div>
+  <div id="image-material-type">
+    <div id="content-image-material-type">
+       <img src="/assets/images/mat-seguridad.jpg" alt="Logo" width="300" height="300" img= "img-responsive">
+    </div>
+  </div>
 </div>
