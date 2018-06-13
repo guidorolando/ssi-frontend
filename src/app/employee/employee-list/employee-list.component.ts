@@ -5,6 +5,8 @@ import {EmployeeService} from '../../services/employee.service';
 import {finalize} from 'rxjs/operators';
 import {EmployeeAddComponent} from '../employee-add/employee-add.component';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {EmployeeEditComponent} from '../employee-edit/employee-edit.component';
+import {SharedValuesService} from '../../services/shared-values.service';
 
 @Component({
   selector: 'app-list-employee',
@@ -14,25 +16,39 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 export class EmployeeListComponent implements OnInit {
   employees$: Observable<Employee[]>;
   isLoading = false;
-  selectedEmployee: Employee;
+  // selectedEmployee: Employee;
   modalRef: BsModalRef;
 
-  constructor(private employeeService: EmployeeService, private modalService: BsModalService) {
+  constructor(private employeeService: EmployeeService,
+              private modalService: BsModalService,
+              private _sharedValuesService: SharedValuesService) {
   }
 
   ngOnInit() {
     this.getEmployees();
+    /*this.employeeService.getEmployees().subscribe(data => {
+      console.log('this employee subscribe ', data);
+      this.employees$ = data;
+      console.log('this employee subscribe ', this.employees$);
+    });*/
   }
 
   getEmployees() {
     this.isLoading = true;
-    this.employees$ = this.employeeService.getEmployees();
-    this.selectedEmployee = undefined;
+    this.employeeService.getEmployees().subscribe(data => {
+      console.log('this employee subscribe ', data);
+      this.employees$ = data;
+      console.log('this employee subscribe ', this.employees$);
+    });
+    /*this.employeeService.getEmployees().subscribe(data => {
+      console.log('this employee subscribe ', data);
+      this.employees$ = data; });*/
+    // this.selectedEmployee = undefined;
   }
 
-  select(employee: Employee) {
+ /* select(employee: Employee) {
     this.selectedEmployee = employee;
-  }
+  }*/
 
   createEmployee() {
     this.modalRef = this.modalService.show(EmployeeAddComponent, {class: 'modal-lg'});
@@ -48,12 +64,20 @@ export class EmployeeListComponent implements OnInit {
     }
   }
 
-  addEmployee() {
+  editEmployee(employee: Employee) {
+    console.log(' edit ', employee);
+    this._sharedValuesService.setEmployee$(employee);
+    this.modalRef = this.modalService.show(EmployeeEditComponent, {class: 'modal-lg'});
+    this.modalRef.content.isModal = true;
+    this.modalRef.content.closeEvent.subscribe(
+      res => this.closeEmployee(res)
+    );
   }
 
-  deleteEmployee() {
+  deleteEmployee(id: number) {
+    this.employeeService.deleteEmployee(id).subscribe(data => {
+      alert('the employee was delete');
+    });
   }
 
-  updateEmployee() {
-  }
 }

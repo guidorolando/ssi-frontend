@@ -39,7 +39,6 @@ export class EmployeeAddComponent implements OnInit {
   public saveEmployee(): void {
     this.isValid = this.employeeService.validate(this.employee);
     if (this.isValid) {
-      console.log('lalala', this.employee);
       this.employeeService.createEmployee(this.employee).subscribe(res => {
         this.router.navigate(['employee-list']);
         this.closeEmployee();
