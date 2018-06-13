@@ -18,7 +18,7 @@ export class MaterialTypeService extends AbstractServiceService {
     super(http);
   }
 
-  getTypeMaterials(): Observable<any> {
+  getAllMaterialType(): Observable<any> {
     return this.http.get<any>(baseURL + 'materialType/materialType', {responseType: 'json'})
       .map((data) => {
         console.log('datatata:' + data);
