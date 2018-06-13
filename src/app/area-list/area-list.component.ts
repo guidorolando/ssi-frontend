@@ -20,29 +20,18 @@ export class AreaListComponent implements OnInit {
 
 
    constructor( private addAreaService: AddAreaService , private  router: Router) {
-     console.log('holassssssssssssssa');
-
      if (sessionStorage.getItem('areas')) {
        console.log('editar valor');
        this.areas = JSON.parse(sessionStorage.getItem('areas'));
        console.log(this.areas);
-
-     } else {
+   } else {
        this.areas = new Area();
      }
    }
 
-
-//  }
-
-
 ngOnInit() {
   }
-
-
   public  saveOrUpdate(): void {
-    console.log("holaa XX");
-
      this.isValid = this.addAreaService.validate(this.areas);
      if (this.isValid) {
        this.addAreaService.saveOrUpdate(this.areas).subscribe(res => {
@@ -58,8 +47,6 @@ ngOnInit() {
 
 
   public  delete(): void {
-    console.log("holaa XX");
-
     this.isValid = this.addAreaService.validate(this.areas);
     if (this.isValid) {
       this.addAreaService.delete(this.areas).subscribe(res => {
@@ -68,16 +55,7 @@ ngOnInit() {
     } else {
       this.message = 'los camos son obligatorios' ;
     }
-
     sessionStorage.clear();
   }
-
-
-
-
-
-
-
-
 
 }

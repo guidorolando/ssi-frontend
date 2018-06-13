@@ -79,6 +79,8 @@ import {EmployeeTypeService} from './services/employee-type.service';
 import { AreaCreateComponent } from './area-create/area-create.component';
 import { AreaListComponent } from './area-list/area-list.component';
 import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
+import { CreatePersonalInformationComponent } from './create-personal-information/create-personal-information.component';
+import { PersonalListComponent } from './personal-list/personal-list.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +114,9 @@ import { CapacityCreateComponent } from './capacity-create/capacity-create.compo
     MaterialDeleteComponent,
     AreaCreateComponent,
     AreaListComponent,
-    CapacityCreateComponent
+    CapacityCreateComponent,
+    CreatePersonalInformationComponent,
+    PersonalListComponent
   ],
   imports: [
     ReactiveFormsModule,
