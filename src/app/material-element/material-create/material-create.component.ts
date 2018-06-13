@@ -12,7 +12,6 @@ import { MaterialType } from '../../models/material-type.model';
 })
 export class MaterialCreateComponent implements OnInit {
   materialTypes: MaterialType[];
-  //materialType:MaterialType;
   material: Material;
   constructor(private materialElement: MaterialElementService,private  router: Router,
               private materialTypeServ: MaterialTypeService) 

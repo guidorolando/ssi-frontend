@@ -19,7 +19,8 @@ export class EmployeeService extends AbstractServiceService {
 
   getEmployees(): Observable<any> {
     return this.http.get<any>(baseURL + 'employee', {responseType: 'json'})
-      .map((data) => {
+      .map((data) => {console.log('ruta: ', baseURL + 'material');
+      console.log('thisemployee', data);
         return data.data;
       })
       .catch(error => {
