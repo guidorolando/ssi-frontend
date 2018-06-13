@@ -1,16 +1,60 @@
-import {Component, OnInit} from '@angular/core';
-import {Employee} from '../../models/employee.model';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Employee, gender} from '../../models/employee.model';
 import {EmployeeService} from '../../services/employee.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';
+import {EmployeeTypeService} from '../../services/employee-type.service';
+import {SharedValuesService} from '../../services/shared-values.service';
 @Component({
   selector: 'app-edit-employee',
   templateUrl: './employee-edit.component.html',
   styleUrls: ['./employee-edit.component.css']
 })
 export class EmployeeEditComponent implements OnInit {
+
   employee: Employee;
+  private isValid: Boolean = true;
+  private  message: String = '';
+  genders = gender;
+  employeeTypes$: [{}];
+
+  public closeEvent = new EventEmitter<boolean>();
+
+  constructor(private employeeService: EmployeeService,
+              private  router: Router,
+              private employeeTypeService: EmployeeTypeService,
+              private _sharedValuesService: SharedValuesService) {
+
+    this.employee = this._sharedValuesService.employeeValue$;
+    this.employee.employeeTypeId = this.employee.employeeType.typeId;
+  }
+
+
+  ngOnInit() {
+    console.log('employee', this.employee);
+    this.employeeTypeService.getEmployeesType().subscribe(data => {
+      console.log('type employee', data);
+      this.employeeTypes$ = data; });
+  }
+
+  public updateEmployee(): void {
+    this.isValid = this.employeeService.validate(this.employee);
+    if (this.isValid) {
+      console.log('update employee', this.employee);
+      this.employeeService.updateEmployee(this.employee).subscribe(res => {
+        this.router.navigate(['employee-list']);
+        this.closeEmployee();
+      });
+    } else {
+      this.message = 'los camos son obligatorios';
+    }
+  }
+
+  closeEmployee() {
+    this.closeEvent.next(true);
+  }
+  /*employee: Employee;
   editForm: FormGroup;
 
   constructor(
@@ -44,5 +88,5 @@ export class EmployeeEditComponent implements OnInit {
         console.log(error);
       }
     );
-  }
+  }*/
 }
