@@ -19,8 +19,8 @@ export class EmployeeService extends AbstractServiceService {
 
   getEmployees(): Observable<any> {
     return this.http.get<any>(baseURL + 'employee', {responseType: 'json'})
-      .map((data) => {console.log('ruta: ', baseURL + 'material');
-      console.log('thisemployee', data);
+      .map((data) => {
+        console.log('this employee', data);
         return data.data;
       })
       .catch(error => {
@@ -39,7 +39,7 @@ export class EmployeeService extends AbstractServiceService {
   getEmployeeById(employeeId): Observable<any> {
     return this.http.get(baseURL + 'employee/' + `${employeeId}`).pipe(
       tap(_ => this.log(`get employee by id=${employeeId}`)),
-      catchError(this.handleError<any>('updateEmployee'))
+      catchError(this.handleError<any>('get Employee by Id'))
     );
   }
 
@@ -59,4 +59,12 @@ export class EmployeeService extends AbstractServiceService {
         return error;
       });
   }
+
+  deleteEmployee(employeeId: number): Observable<any> {
+    return this.http.delete(baseURL + 'employee/' + `${employeeId}`, httpOptions).pipe(
+      tap(_ => this.log(`delete employee id=${employeeId}`)),
+      catchError(this.handleError<any>('deleteEmployee'))
+    );
+  }
+
 }
