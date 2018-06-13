@@ -33,8 +33,7 @@
         <label class="control-label col-sm-1" >Gender:</label>
         <div class="col-sm-4">
           <select class="form-control" [(ngModel)]="employee.gender" name="gender">
-            <option>FEMALE</option>
-            <option>MALE</option>
+            <option *ngFor="let gender of genders">{{gender.valueOf()}}</option>
           </select>
         </div>
       </div>
@@ -64,12 +63,7 @@
         <label class="control-label col-sm-2">Employee Type:</label>
         <div class="col-sm-4">
           <select class="form-control" [(ngModel)]="employee.employeeTypeId" name="employeeTypeId">
-            <!--<option *ngFor="let employeeType of getEmployeesType()">{{employeeType.typeName}}</option>-->
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option *ngFor="let employeeType of employeeTypes$" [value]="employeeType.typeId">{{employeeType.typeName}}</option>
           </select>
         </div>
         <label class="control-label col-sm-1">Salary:</label>

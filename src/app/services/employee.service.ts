@@ -43,10 +43,6 @@ export class EmployeeService extends AbstractServiceService {
     );
   }
 
-  /*createEmployee(employee: Employee): Observable<any> {
-    return this.http.post(baseURL + 'employee', employee, httpOptions);
-  }*/
-
   public validate(employee: Employee): boolean {
     return true;
   }
