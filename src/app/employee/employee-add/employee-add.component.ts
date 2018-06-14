@@ -16,8 +16,8 @@ import {Observable} from 'rxjs/Observable';
 export class EmployeeAddComponent implements OnInit {
 
   employee: Employee;
-  private isValid: Boolean = true;
-  private  message: String = '';
+  isValid: Boolean = true;
+  message: String = '';
   genders = gender;
   employeeTypes$: [{}];
 

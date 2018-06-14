@@ -116,7 +116,9 @@ import { PersonalListComponent } from './personal-list/personal-list.component';
     AreaListComponent,
     CapacityCreateComponent,
     CreatePersonalInformationComponent,
-    PersonalListComponent
+    PersonalListComponent,
+    IncidentAddComponent,
+    IncidentListComponent
   ],
   imports: [
     ReactiveFormsModule,

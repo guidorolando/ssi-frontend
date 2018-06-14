@@ -16,8 +16,8 @@ import {AreaListComponent} from '../area-list/area-list.component';
   providers: [AreaService]
 })
 export class AreaCreateComponent implements OnInit {
-  private  areas: Array<Area>;
-
+  areas: Array<Area>;
+  areasItem: Area;
   constructor( private  areaService: AreaService ,
                private  router: Router) {
   }

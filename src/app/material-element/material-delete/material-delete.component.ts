@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-material-delete',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialDeleteComponent implements OnInit {
 
-  constructor() { }
+  editMaterial: any;
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onClick() {
+
   }
 
 }
