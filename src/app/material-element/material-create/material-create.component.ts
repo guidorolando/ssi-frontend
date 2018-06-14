@@ -13,10 +13,26 @@ import { MaterialType } from '../../models/material-type.model';
 export class MaterialCreateComponent implements OnInit {
   materialTypes: MaterialType[];
   material: Material;
+  editMode: boolean;
+  materialEditId: number;
   constructor(private materialElement: MaterialElementService,private  router: Router,
-              private materialTypeServ: MaterialTypeService) 
+              private materialTypeServ: MaterialTypeService,private route: ActivatedRoute) 
   {
     this.material = new Material();
+    this.route.params.subscribe(
+      param=>{this.editMode=param.id!=null;
+      this.materialEditId=param.id
+      }
+      );
+
+
+    if(this.editMode){
+      console.log('recuperando datos');
+      var edit = this.materialElement.getMaterialById(this.materialEditId).subscribe(
+        value=>{this.material=value}
+      );
+      console.log(edit);
+    }
    }
 
   ngOnInit() {
@@ -24,10 +40,13 @@ export class MaterialCreateComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('Material:::::::::::::::::::::',this.material);
-     this.material.id = 0;
-     this.material.materialType = this.materialSelected(this.material.materialTypeId);
-     console.log('Material:::::::::::::::::::::',this.material);
+    if(this.editMode){
+      this.materialElement.updateMaterial(this.material).subscribe(response=>{this.material=new Material()});
+    }else{
+     //console.log('Material:::::::::::::::::::::',this.material);
+    this.material.id = 0;
+    this.material.materialType = this.materialSelected(this.material.materialTypeId);
+     //console.log('Material:::::::::::::::::::::',this.material);
     this.materialElement.createMaterial(this.material).subscribe(
       response=>{
         console.log(response);
@@ -36,6 +55,7 @@ export class MaterialCreateComponent implements OnInit {
         console.log(<any> error)  
       }
     );
+    }
   }
 
   materialSelected(idselected : number): MaterialType{

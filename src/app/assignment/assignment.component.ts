@@ -35,7 +35,7 @@ export class AssignmentComponent implements OnInit {
   onSubmit(){
     console.log('this assigment:', this.assignment);
     //console.log('Material:::::::::::::::::::::',this.material);
-    this.assignment.assignmentDate ="2018-06-12T04:00:00.000+0000";
+    this.assignment.assignmentDate ="2018-06-13";
     this.assignment.employee = this.employeeSelect(this.assignment.employeeId);
     console.log('assignment:employee::::::::::::::::::::',this.assignment.employee);
     this.assignment.material = this.materialSelect(this.assignment.materialId);
