@@ -25,7 +25,7 @@ export class MaterialTypeListComponent implements OnInit {
 
   getMaterialTypes() {
     this.isLoading = true;
-    this.materialTypes$ = this.materialTypeService.getTypeMaterials();
+    this.materialTypes$ = this.materialTypeService.getAllMaterialType();
     this.selectedMaterialType = undefined;
   }
 
