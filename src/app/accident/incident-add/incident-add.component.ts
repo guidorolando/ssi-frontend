@@ -40,7 +40,7 @@ export class IncidentAddComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createIncidentForm = this.fb.group(new CreateIncident());
+    this.createIncidentForm = this.fb.group(<any> new CreateIncident());
     this.getEmployees();
     this.getIncidentAgents();
     this.getIncidentTypes();
@@ -50,33 +50,42 @@ export class IncidentAddComponent implements OnInit {
     this.closeEvent.next(true);
     console.log(this.createIncidentForm.value);
   }
+
   getEmployees() {
     this.employees$ = this.employeeService.getEmployees();
   }
+
   selectEmployee(employee: Employee) {
     this.employee = employee;
   }
+
   getIncidentAgents() {
     this.incidentAgents$ = this.incidentAgentService.getIncidentAgents();
   }
+
   selectIncidentAgent(incidentAgent: IncidentAgent) {
     this.incidentAgent = incidentAgent;
   }
+
   getIncidentTypes() {
     this.incidentTypes$ = this.incidentTypeService.getIncidentTypes();
   }
+
   selectIncidentType(incidentType: IncidentType) {
     this.incidentType = incidentType;
   }
+
   fillInformation(employeeId) {
     this.employeeId = employeeId;
     this.getEmployeeById(employeeId);
   }
-  getEmployeeById (employeeId) {
+
+  getEmployeeById(employeeId) {
     this.employeeService.getEmployeeById(employeeId).subscribe(data => {
       this.employee = data.data;
     });
   }
+
   onSubmit() {
     this.incidentService.saveIncident(this.createIncidentForm.value).subscribe(data => {
       console.log(data);

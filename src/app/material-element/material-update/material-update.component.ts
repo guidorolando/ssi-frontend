@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-material-update',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialUpdateComponent implements OnInit {
 
-  constructor() { }
+  editMaterial: any;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onClick() {
+  }
 }
