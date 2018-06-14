@@ -1,0 +1,49 @@
+
+
+
+<div><h2>Employee List </h2></div>
+
+<div class="col-md-12">
+
+  <div>
+    <h2>Employee List </h2>
+  </div>
+  <div>
+    <td>
+      <button (click)="getEmployees()" class="btn btn-primary">Refresh</button>
+
+    <button (click)="createEmployee()" class="btn btn-success" style="margin-left: 10px;">Add Employee</button>
+  </td><br>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr bgcolor="#87cefa">
+      <th class="hidden">Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>CI</th>
+      <th>Email</th>
+      <th>Type Employee</th>
+      <th>Address</th>
+      <th>Salary</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees$">
+      <td class="hidden">{{employee.id}}</td>
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.ci}}</td>
+      <td>{{employee.email}}</td>
+      <!--<td>{{employee.employeeTypeId}}</td>-->
+      <td>{{employee.employeeType.typeName}}</td>
+      <td>{{employee.address}}</td>
+      <td>{{employee.salary}}</td>
+      <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)"> Delete</button>
+        <button (click)="editEmployee(employee)" class="btn btn-info" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

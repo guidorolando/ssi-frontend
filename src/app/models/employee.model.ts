@@ -1,14 +1,20 @@
+import { EmployeeType } from './employee-type.model';
+
 export class Employee {
-  id = 0;
-  firstName = '';
-  lastName = '';
-  address = '';
-  ci = '';
-  birthDate = '';
-  gender = '';
-  email = '';
-  phone = 0;
-  salary = 0.0;
+  id: number;
+  ci: string;
+  firstName: string;
+  lastName: string;
+  birthDate: string;
+  gender: string;
+  email: string;
+  phone: number;
+  address: string;
+  salary: any;
+  employeeTypeId: number;
+  employeeType: EmployeeType;
+  capacities = [];
+  deleted = false;
 }
 
 

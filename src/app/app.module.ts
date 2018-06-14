@@ -37,9 +37,9 @@ import {
   MatRippleModule,
   MatTableModule
 } from '@angular/material';
- import {UserService} from './security/services/user.service';
- import {AuthGuard} from './security/guards/auth-guard.service';
- import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
+import {UserService} from './security/services/user.service';
+import {AuthGuard} from './security/guards/auth-guard.service';
+import {AdminAuthGuard} from './security/guards/admin-auth-guard.service';
 
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -51,10 +51,11 @@ import {MaterialElementComponent} from './material-element/material-element.comp
 import { ReportComponent } from './report/report.component';
 import { HomeComponent } from './home/home.component';
 import {MatStepperModule} from '@angular/material/stepper';
-import {EmployeeListComponent} from './ui/form/employee/employee-list/employee-list.component';
-import {EmployeeDetailComponent} from './ui/form/employee/employee-detail/employee-detail.component';
+import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
+import {EmployeeDetailComponent} from './employee/employee-detail/employee-detail.component';
 import {ModelModule} from './models/model.module';
-import { AccidentComponent } from './accident/accident.component';
+import {IncidentListComponent} from './accident/incident-list/incident-list.component';
+import {IncidentAddComponent} from './accident/incident-add/incident-add.component';
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
 import { AssignmentService } from './security/services/assignment.service';
@@ -63,12 +64,23 @@ import {ServiceModule} from './services/service.module';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 import {IncidentTypeDetailComponent} from './ui/form/Incident-type/incident-type-detail/incident-type-detail.component';
 import {MaterialElementService} from './security/services/material-element.service';
-import {EmployeeAddComponent} from './ui/form/employee/employee-add/employee-add.component';
-import {EmployeeEditComponent} from './ui/form/employee/employee-edit/employee-edit.component';
-import { MaterialCreateComponent } from './material-element/material-create/material-create.component';
-import { MaterialUpdateComponent } from './material-element/material-update/material-update.component';
-import { MaterialDeleteComponent } from './material-element/material-delete/material-delete.component';
-
+import {EmployeeAddComponent} from './employee/employee-add/employee-add.component';
+import {EmployeeEditComponent} from './employee/employee-edit/employee-edit.component';
+import {MaterialDeleteComponent} from './material-element/material-delete/material-delete.component';
+import {MaterialUpdateComponent} from './material-element/material-update/material-update.component';
+import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
+import {AutocompleteComponent} from './ui/form/incident/autocomplete/autocomplete.component';
+import {BsModalService, ModalModule} from 'ngx-bootstrap';
+import {MaterialTypeAddComponent} from './material-type/material-type-add/material-type-add.component';
+import {MaterialTypeService} from './services/material-type.service';
+import {MaterialTypeListComponent} from './material-type/material-type-list/material-type-list.component';
+import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-type-list.component';
+import {EmployeeTypeService} from './services/employee-type.service';
+import { AreaCreateComponent } from './area-create/area-create.component';
+import { AreaListComponent } from './area-list/area-list.component';
+import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
+import { CreatePersonalInformationComponent } from './create-personal-information/create-personal-information.component';
+import { PersonalListComponent } from './personal-list/personal-list.component';
 
 @NgModule({
   declarations: [
@@ -84,15 +96,29 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     EmployeeListComponent,
     EmployeeAddComponent,
     EmployeeEditComponent,
+    EmployeeDetailComponent,
+    EmployeeTypeListComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
+    MaterialTypeAddComponent,
+    MaterialTypeListComponent,
     ReportComponent,
     HomeComponent,
-    AccidentComponent,
     OEstructureComponent,
     MaterialCreateComponent,
     MaterialUpdateComponent,
-    MaterialDeleteComponent
+    MaterialDeleteComponent,
+    AutocompleteComponent,
+    MaterialDeleteComponent,
+    AutocompleteComponent,
+    MaterialDeleteComponent,
+    AreaCreateComponent,
+    AreaListComponent,
+    CapacityCreateComponent,
+    CreatePersonalInformationComponent,
+    PersonalListComponent,
+    IncidentAddComponent,
+    IncidentListComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -116,6 +142,10 @@ import { MaterialDeleteComponent } from './material-element/material-delete/mate
     AdminAuthGuard,
     MaterialElementService,
     AssignmentService,
+    AssignmentReportService,
+    BsModalService,
+    MaterialTypeService,
+    EmployeeTypeService,
     AssignmentReportService
   ],
   bootstrap: [AppComponent]

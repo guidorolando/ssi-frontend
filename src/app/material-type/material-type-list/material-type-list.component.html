@@ -1,0 +1,32 @@
+<!--<p>
+  material-type-list works!
+</p>-->
+<div class="col-md-6" id="content-material-type">
+  <div id="material-type-list">
+  <h2> Material Type List</h2>
+  <button (click)="createMaterialType()" class="btn btn-success">Add Material Type</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Material Type Name</th>
+      <th align="center">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let materialType of materialTypes$ | async">
+      <td class="hidden">{{materialType.id}}</td>
+      <td>{{materialType.nameType}}</td>
+      <td><button class="btn btn-danger" (click)="deleteMaterialType(materialType)"> Delete</button>
+        <button class="btn btn-info" (click)="updateMaterialType(materialType)" style="margin-left: 20px;"> Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="image-material-type">
+    <div id="content-image-material-type">
+       <img src="/assets/images/mat-seguridad.jpg" alt="Logo" width="300" height="300" img= "img-responsive">
+    </div>
+  </div>
+</div>
