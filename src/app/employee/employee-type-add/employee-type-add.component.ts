@@ -28,7 +28,7 @@ export class EmployeeTypeAddComponent implements OnInit {
     this.isValid = this.employeeTypeService.validate(this.employeeType);
     if (this.isValid) {
       this.employeeTypeService.createTypeEmployee(this.employeeType).subscribe(res => {
-        this.router.navigate(['employee-list']);
+        this.router.navigate(['employee-type-list']);
         this.closeModal();
       });
     } else {

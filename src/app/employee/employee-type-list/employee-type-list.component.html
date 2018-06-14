@@ -1,7 +1,7 @@
 
 <div>
   <h2> Type Employee List</h2><br>
-  <button  class="btn btn-success" style="margin-left: 20px;">Add Type Employee</button>
+  <button  (click)="createEmployeeType()"  class="btn btn-success" style="margin-left: 20px;">Add Type Employee</button>
 </div>
 <br/>
 <div class="col-md-6">
@@ -15,12 +15,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let employeeType of employeeTypes$ | async">
+    <tr *ngFor="let employeeType of employeeTypes$">
       <td class="hidden">{{employeeType.typeId}}</td>
       <td>{{employeeType.typeName}}</td>
       <td>{{employeeType.description}}</td>
       <td><button class="btn btn-danger" > Delete</button>
-        <button class="btn btn-info"  style="margin-left: 20px;"> Edit</button></td>
+        <button (click)="editTypeEmployee(employeeType)" class="btn btn-info"  style="margin-left: 20px;"> Edit</button></td>
     </tr>
     </tbody>
   </table>

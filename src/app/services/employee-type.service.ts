@@ -5,6 +5,7 @@ import {baseURL} from '../shared/baseurl';
 import {AbstractServiceService} from './abstract-service.service';
 import {EmployeeType} from '../models/employee-type.model';
 import {Employee} from '../models/employee.model';
+import {catchError, tap} from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -42,5 +43,12 @@ export class EmployeeTypeService extends AbstractServiceService {
         console.log('error:' + error);
         return error;
       });
+  }
+
+  updateTypeEmployee(employeeType: EmployeeType): Observable<any> {
+    return this.http.put(baseURL + 'employeeType/' + `${employeeType.typeId}`, employeeType, httpOptions).pipe(
+      tap(_ => this.log(`updated employeeType id=${employeeType.typeId}`)),
+      catchError(this.handleError<any>('updateTypeEmployee'))
+    );
   }
 }

@@ -81,6 +81,8 @@ import { AreaListComponent } from './area-list/area-list.component';
 import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
 import { CreatePersonalInformationComponent } from './create-personal-information/create-personal-information.component';
 import { PersonalListComponent } from './personal-list/personal-list.component';
+import {EmployeeTypeAddComponent} from './employee/employee-type-add/employee-type-add.component';
+import {EmployeeTypeEditComponent} from './employee/employee-type-edit/employee-type-edit.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,8 @@ import { PersonalListComponent } from './personal-list/personal-list.component';
     EmployeeEditComponent,
     EmployeeDetailComponent,
     EmployeeTypeListComponent,
+    EmployeeTypeAddComponent,
+    EmployeeTypeEditComponent,
     IncidentTypeListComponent,
     IncidentTypeDetailComponent,
     MaterialTypeAddComponent,

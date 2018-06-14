@@ -25,11 +25,13 @@ import {AreaCreateComponent} from './area-create/area-create.component';
 import {CapacityCreateComponent} from './capacity-create/capacity-create.component';
 import {AreaListComponent} from './area-list/area-list.component';
 import {CreatePersonalInformationComponent} from './create-personal-information/create-personal-information.component';
-import {PersonalListComponent} from "./personal-list/personal-list.component";
+import {PersonalListComponent} from './personal-list/personal-list.component';
 import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
 import {EmployeeAddComponent} from './employee/employee-add/employee-add.component';
 import {EmployeeEditComponent} from './employee/employee-edit/employee-edit.component';
 import {EmployeeDetailComponent} from './employee/employee-detail/employee-detail.component';
+import {EmployeeTypeAddComponent} from './employee/employee-type-add/employee-type-add.component';
+import {EmployeeTypeEditComponent} from './employee/employee-type-edit/employee-type-edit.component';
 
 const routes: Routes = [
   {
@@ -71,6 +73,14 @@ const routes: Routes = [
   {
     path: 'employee-type-list',
     component: EmployeeTypeListComponent
+  },
+  {
+    path: 'employee-type-add',
+    component: EmployeeTypeAddComponent
+  },
+  {
+    path: 'employee-type-edit',
+    component: EmployeeTypeEditComponent
   },
   {
     path: 'incident-type-list',
