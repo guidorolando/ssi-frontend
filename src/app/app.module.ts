@@ -120,7 +120,9 @@ import {EmployeeTypeEditComponent} from './employee/employee-type-edit/employee-
     AreaListComponent,
     CapacityCreateComponent,
     CreatePersonalInformationComponent,
-    PersonalListComponent
+    PersonalListComponent,
+    IncidentAddComponent,
+    IncidentListComponent
   ],
   imports: [
     ReactiveFormsModule,

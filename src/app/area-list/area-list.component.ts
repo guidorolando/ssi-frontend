@@ -14,9 +14,9 @@ import {AreaCreateComponent} from '../area-create/area-create.component';
 })
 export class AreaListComponent implements OnInit {
 
-   private areas: Area;
-   private isValid: Boolean = true;
-   private  message: String = '';
+   areas: Area;
+   isValid: Boolean = true;
+   message: String = '';
 
 
    constructor( private addAreaService: AddAreaService , private  router: Router) {

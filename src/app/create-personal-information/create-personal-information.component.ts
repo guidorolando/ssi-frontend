@@ -18,15 +18,15 @@ import {PersonalAddService} from '../services/personal-add.service';
   providers: [PersonalAddService, AddAreaService, AreaService]
 })
 export class CreatePersonalInformationComponent implements OnInit {
-   private employee: Employee;
-   private area: Area;
-   private  employeeTypes$: [{}];
-   private  listEmployee$: [{}];
-   private  listArea$: [{}];
+   employee: Employee;
+   area: Area;
+   employeeTypes$: [{}];
+   listEmployee$: [{}];
+   listArea$: [{}];
 
-  private areas: Area;
-  private isValid: Boolean = true;
-  private  message: String = '';
+   areas: Area;
+   isValid: Boolean = true;
+   message: String = '';
 
 
 
