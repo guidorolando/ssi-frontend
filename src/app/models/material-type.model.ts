@@ -1,4 +1,4 @@
-export class MaterialType{
+export class MaterialType {
   id = 0;
-  name = '';
+  nameType = '';
 }

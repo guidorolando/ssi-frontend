@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Employee} from '../../models/employee.model';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {MaterialType} from '../../models/material-type.model';
 import {MaterialTypeService} from '../../services/material-type.service';
 import {MaterialTypeAddComponent} from '../material-type-add/material-type-add.component';
+import {SharedValuesService} from '../../services/shared-values.service';
+import {MaterialTypeEditComponent} from '../material-type-edit/material-type-edit.component';
 
 @Component({
   selector: 'app-material-type-list',
@@ -17,7 +18,9 @@ export class MaterialTypeListComponent implements OnInit {
   isLoading = false;
   selectedMaterialType: MaterialType;
   modalRef: BsModalRef;
-  constructor(private materialTypeService: MaterialTypeService, private modalService: BsModalService) { }
+  constructor(private materialTypeService: MaterialTypeService
+              , private modalService: BsModalService
+              , private sharedValuesService: SharedValuesService) { }
 
   ngOnInit() {
     this.getMaterialTypes();
@@ -47,9 +50,19 @@ export class MaterialTypeListComponent implements OnInit {
     }
   }
 
-  deleteMaterialType() {
+  updateMaterialType(materialType: MaterialType) {
+    console.log(' edit ', materialType);
+     this.sharedValuesService.setMaterialTypes$(materialType);
+    this.modalRef = this.modalService.show(MaterialTypeEditComponent, {class: 'modal-lg'});
+    this.modalRef.content.isModal = true;
+    this.modalRef.content.closeEvent.subscribe(
+      res => this.closeMaterialType(res)
+    );
+  }
+  deleteMaterialType(id: number) {
+      this.materialTypeService.deleteMaterialType(id).subscribe(data => {
+        alert('the material Type was delete');
+      });
   }
 
-  updateMaterialType() {
-  }
 }

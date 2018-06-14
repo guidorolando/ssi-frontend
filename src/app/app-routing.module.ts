@@ -24,6 +24,7 @@ import {EmployeeTypeListComponent} from './employee/employee-type-list/employee-
 import {AreaCreateComponent} from './area-create/area-create.component';
 import {CapacityCreateComponent} from './capacity-create/capacity-create.component';
 import {AreaListComponent} from './area-list/area-list.component';
+import {MaterialTypeEditComponent} from './material-type/material-type-edit/material-type-edit.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'material-type-add',
     component: MaterialTypeAddComponent
+  },
+  {
+    path: 'material-type-edit',
+    component: MaterialTypeEditComponent
   },
   {
     path: 'material-type-list',
