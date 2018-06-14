@@ -55,4 +55,17 @@ export class MaterialElementService {
         return error;
       });
   }
+
+  updateMaterial (material: Material): Observable<any> {
+    console.log(baseURL);
+    return this.http.put(baseURL + 'Material/'+material.id,material, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
+  }
 }

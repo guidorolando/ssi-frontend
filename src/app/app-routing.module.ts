@@ -117,6 +117,10 @@ const routes: Routes = [
     component: MaterialUpdateComponent
   },
   {
+    path: 'create-edit-mat/:id',
+    component: MaterialCreateComponent
+  },
+  {
     path: 'area-create',
     component: AreaCreateComponent
   },
