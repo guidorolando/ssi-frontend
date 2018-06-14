@@ -80,6 +80,8 @@ import { AreaCreateComponent } from './area-create/area-create.component';
 import { AreaListComponent } from './area-list/area-list.component';
 import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
 import {MaterialTypeEditComponent} from './material-type/material-type-edit/material-type-edit.component';
+import { CreatePersonalInformationComponent } from './create-personal-information/create-personal-information.component';
+import { PersonalListComponent } from './personal-list/personal-list.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +116,11 @@ import {MaterialTypeEditComponent} from './material-type/material-type-edit/mate
     MaterialDeleteComponent,
     AreaCreateComponent,
     AreaListComponent,
-    CapacityCreateComponent
+    CapacityCreateComponent,
+    CreatePersonalInformationComponent,
+    PersonalListComponent,
+    IncidentAddComponent,
+    IncidentListComponent
   ],
   imports: [
     ReactiveFormsModule,

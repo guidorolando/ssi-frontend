@@ -14,8 +14,8 @@ import {SharedValuesService} from '../../services/shared-values.service';
 export class EmployeeEditComponent implements OnInit {
 
   employee: Employee;
-  private isValid: Boolean = true;
-  private  message: String = '';
+  isValid: Boolean = true;
+  message: String = '';
   genders = gender;
   employeeTypes$: [{}];
 
