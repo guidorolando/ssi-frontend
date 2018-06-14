@@ -1,0 +1,39 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title pull-left">
+      <span class="text-warning icon-interface-1"></span>
+      <span>Create Employee</span>
+    </h3>
+    <button type="button" class="close close_modal" aria-label="Close" (click)="closeEmployee()">
+      <img src="/assets/images/close.jpg">
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal">
+      <div  *ngIf="!isValid" class="alert alert-danger">
+        <strong>Error!</strong> Falta Lllenar algunoscambio
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2"> Name Type Employee:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="employeeType.typeName" placeholder="Enter First Name" name="firstName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2">Description:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="employeeType.description"  placeholder="Enter Last Name" name="lastName">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" (click)="saveEmployeeType()" class="btn btn-primary">Create
+          </button>
+          <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top"
+                  (click)="closeModal()">Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
