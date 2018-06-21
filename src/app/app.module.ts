@@ -79,6 +79,7 @@ import {EmployeeTypeService} from './services/employee-type.service';
 import { AreaCreateComponent } from './area-create/area-create.component';
 import { AreaListComponent } from './area-list/area-list.component';
 import { CapacityCreateComponent } from './capacity-create/capacity-create.component';
+import {MaterialTypeEditComponent} from './material-type/material-type-edit/material-type-edit.component';
 import { CreatePersonalInformationComponent } from './create-personal-information/create-personal-information.component';
 import { PersonalListComponent } from './personal-list/personal-list.component';
 
@@ -102,6 +103,7 @@ import { PersonalListComponent } from './personal-list/personal-list.component';
     IncidentTypeDetailComponent,
     MaterialTypeAddComponent,
     MaterialTypeListComponent,
+    MaterialTypeEditComponent,
     ReportComponent,
     HomeComponent,
     OEstructureComponent,
