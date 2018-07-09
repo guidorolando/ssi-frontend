@@ -51,6 +51,14 @@ const routes: Routes = [
     component: AssignmentReportComponent
   },
   {
+    path: 'incident-list',
+    component: IncidentListComponent
+  },
+  {
+    path: 'incident-add',
+    component: IncidentAddComponent
+  },
+  {
     path: 'employee-list',
     component: EmployeeListComponent
   },
