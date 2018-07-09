@@ -18,6 +18,7 @@ export class IncidentAgentService extends AbstractServiceService {
   getIncidentAgents(): Observable<any> {
     return this.http.get<any>(baseURL + 'accidentAgent', {responseType: 'json'})
       .map((data) => {
+        console.log('ppppppppppppppppppppppppppppppppppppppppppppppppp');
         console.log(data);
         return data;
       })

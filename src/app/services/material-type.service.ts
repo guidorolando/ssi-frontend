@@ -30,6 +30,9 @@ export class MaterialTypeService extends AbstractServiceService {
       });
   }
 
+  public validate(materialType: MaterialType): boolean {
+    return true;
+  }
   getMaterialTypeById(materialType: MaterialType): Observable<any> {
     return this.http.get<any>(baseURL + 'materialType/' + `${materialType.id}`, {responseType: 'json'})
       .map((data) => {
@@ -44,11 +47,27 @@ export class MaterialTypeService extends AbstractServiceService {
   updateMaterialType(materialType: MaterialType): Observable<MaterialType> {
     return this.http.put(baseURL + 'materialType/' + `${materialType.id}`, materialType, httpOptions).pipe(
       tap(_ => this.log(`updated materialType id=${materialType.id}`)),
-      catchError(this.handleError<any>('updateHero'))
+      catchError(this.handleError<any>('updateMaterialType'))
     );
   }
-
-  createMaterialType(materialType: MaterialType): Observable<MaterialType> {
-    return null;
+  /* Metodh for create Material Type */
+  createMaterialType (materialType: MaterialType): Observable<any> {
+    console.log('new materialType:', materialType);
+    return this.http.post(baseURL + 'materialType',  materialType, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
+  }
+  /*Metodh for delete Material Type*/
+  deleteMaterialType(matTypeId: number): Observable<any> {
+    return this.http.delete(baseURL + 'materialType/' + `${matTypeId}`, httpOptions).pipe(
+      tap(_ => this.log(`delete materialType id=${matTypeId}`)),
+      catchError(this.handleError<any>('deleteMaterialType'))
+    );
   }
 }

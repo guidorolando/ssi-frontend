@@ -2,23 +2,23 @@
   <div class="modal-header">
     <h3 class="modal-title pull-left">
       <span class="text-warning icon-interface-1"></span>
-      <span>Create Material Type</span>
+      <span>Update Material Type</span>
     </h3>
     <button type="button" class="close close_modal" aria-label="Close" (click)="closeMaterialType()">
       <img src="/assets/images/close.jpg">
     </button>
   </div>
   <div class="modal-body">
-    <form class="form-horizontal" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <form class="form-horizontal" >
       <div class="form-group">
         <label class="control-label col-sm-2" for="firstName">Material Type:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="firstName" placeholder="Enter Type Material" name="matType">
+          <input type="text" class="form-control" [(ngModel)] =" materialType.nameType"id="firstName" placeholder="Enter Type Material" name="matType">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-primary">Create
+          <button type="submit" (click)="updateMaterialType()" class="btn btn-primary">Update
           </button>
           <button type="button" class="btn btn-danger " data-toggle="tooltip" data-placement="top"
                   (click)="closeMaterialType()">Cancel
@@ -28,3 +28,4 @@
     </form>
   </div>
 </div>
+

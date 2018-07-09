@@ -76,8 +76,8 @@ export class IncidentAddComponent implements OnInit {
   }
 
   fillInformation(employeeId) {
-    this.employeeId = employeeId;
-    this.getEmployeeById(employeeId);
+    this.employeeId = employeeId + 1;
+    this.getEmployeeById(this.employeeId);
   }
 
   getEmployeeById(employeeId) {
@@ -87,8 +87,10 @@ export class IncidentAddComponent implements OnInit {
   }
 
   onSubmit() {
+
     this.incidentService.saveIncident(this.createIncidentForm.value).subscribe(data => {
       console.log(data);
     });
+    this.closeIncident();
   }
 }
