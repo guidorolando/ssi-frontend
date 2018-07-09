@@ -12,7 +12,7 @@ import {MaterialType} from '../../models/material-type.model';
 export class MaterialTypeAddComponent implements OnInit {
 
   materialType: MaterialType;
-  addForm: FormGroup;
+  // addForm: FormGroup;
   private isValid: Boolean = true;
   private message: String = '';
   public closeEvent = new EventEmitter<boolean>();
@@ -24,17 +24,17 @@ export class MaterialTypeAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.addForm = this.fb.group({
-      id: [],
-      matType: ['', Validators.required]
-    });
+    // this.addForm = this.fb.group({
+      // id: [],
+     //  nameType: ['', Validators.required]
+    // });
   }
 
   onSubmit() {
-    this.materialTypeService.createMaterialType(this.addForm.value).subscribe(
+    this.materialTypeService.createMaterialType(this.materialType).subscribe(
       data => {
-        console.log(data);
-        this.router.navigate(['material-list']);
+        console.log('create', data);
+        this.router.navigate(['material-type-list']);
       }
     );
   }
@@ -46,7 +46,7 @@ export class MaterialTypeAddComponent implements OnInit {
     this.isValid = this.materialTypeService.validate(this.materialType);
     if (this.isValid) {
       this.materialTypeService.createMaterialType(this.materialType).subscribe(res => {
-        this.router.navigate(['materialType-list']);
+        this.router.navigate(['material-Type-list']);
         this.closeMaterialType();
       });
     } else {
