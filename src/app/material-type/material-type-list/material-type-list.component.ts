@@ -6,6 +6,9 @@ import {MaterialTypeService} from '../../services/material-type.service';
 import {MaterialTypeAddComponent} from '../material-type-add/material-type-add.component';
 import {SharedValuesService} from '../../services/shared-values.service';
 import {MaterialTypeEditComponent} from '../material-type-edit/material-type-edit.component';
+import {variable} from '@angular/compiler/src/output/output_ast';
+import {parseTimelineCommand} from '@angular/animations/browser/src/render/shared';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-material-type-list',
@@ -18,7 +21,7 @@ export class MaterialTypeListComponent implements OnInit {
   isLoading = false;
   selectedMaterialType: MaterialType;
   modalRef: BsModalRef;
-  constructor(private materialTypeService: MaterialTypeService
+  constructor(private router: Router, private materialTypeService: MaterialTypeService
               , private modalService: BsModalService
               , private sharedValuesService: SharedValuesService) { }
 
@@ -53,6 +56,7 @@ export class MaterialTypeListComponent implements OnInit {
   updateMaterialType(materialType: MaterialType) {
     console.log(' edit ', materialType);
      this.sharedValuesService.setMaterialTypes$(materialType);
+    console.log(' edit ', this.sharedValuesService.setMaterialTypes$(materialType));
     this.modalRef = this.modalService.show(MaterialTypeEditComponent, {class: 'modal-lg'});
     this.modalRef.content.isModal = true;
     this.modalRef.content.closeEvent.subscribe(
@@ -60,9 +64,12 @@ export class MaterialTypeListComponent implements OnInit {
     );
   }
   deleteMaterialType(id: number) {
-      this.materialTypeService.deleteMaterialType(id).subscribe(data => {
-        alert('the material Type was delete');
-      });
+      if ( confirm('Esta seguro que desea eliminar?')) {
+          this.materialTypeService.deleteMaterialType(id).subscribe(data => {
+              // alert('Material type was deleted' + '=>' + id );
+              this.router.navigate(['material-type-list'] );
+          });
+      }
   }
 
 }

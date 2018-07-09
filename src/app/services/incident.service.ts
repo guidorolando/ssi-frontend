@@ -36,6 +36,8 @@ export class IncidentService extends AbstractServiceService {
         return data;
       })
       .catch(error => {
+        console.log('error:' + error);
+        return error;
       });
   }
 }

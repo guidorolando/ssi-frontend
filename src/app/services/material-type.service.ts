@@ -53,7 +53,7 @@ export class MaterialTypeService extends AbstractServiceService {
   /* Metodh for create Material Type */
   createMaterialType (materialType: MaterialType): Observable<any> {
     console.log('new materialType:', materialType);
-    return this.http.post(baseURL + 'materialType',  materialType, httpOptions)
+    return this.http.post(baseURL + 'materialType/',  materialType, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;
@@ -64,9 +64,9 @@ export class MaterialTypeService extends AbstractServiceService {
       });
   }
   /*Metodh for delete Material Type*/
-  deleteMaterialType(matTypeId: number): Observable<any> {
-    return this.http.delete(baseURL + 'materialType/' + `${matTypeId}`, httpOptions).pipe(
-      tap(_ => this.log(`delete materialType id=${matTypeId}`)),
+  deleteMaterialType(materialTypeId: number): Observable<any> {
+    return this.http.delete(baseURL + 'materialType/' + `${materialTypeId}`, httpOptions).pipe(
+      tap(_ => this.log(`delete materialType id=${materialTypeId}`)),
       catchError(this.handleError<any>('deleteMaterialType'))
     );
   }

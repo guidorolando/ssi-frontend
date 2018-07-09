@@ -29,7 +29,7 @@ export class MaterialTypeEditComponent implements OnInit {
   public updateMaterialType(): void {
     this.isValid = this.materialTypeService.validate(this.materialType);
     if (this.isValid) {
-      console.log('update employee', this.materialType);
+      console.log('update material Type', this.materialType);
       this.materialTypeService.updateMaterialType(this.materialType).subscribe(res => {
         this.router.navigate(['material-type-list']);
         this.closeMaterialType();
