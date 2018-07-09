@@ -82,7 +82,7 @@
         <label class="control-label col-sm-2" for="incidentAgent">Incident Agent:</label>
         <div class="col-sm-4">
           <select id="incidentAgent" class="form-control" formControlName="accidentAgentId">
-            <option *ngFor="let incidentAgent of incidentAgents$ | async" [ngValue]="incidentAgent.id">{{incidentAgent.agentName}}</option>
+            <option *ngFor="let incidentAgent of incidentAgents$ | async" [ngValue]="incidentAgent.id">{{incidentAgent.name}}</option>
           </select>
         </div>
       </div>
