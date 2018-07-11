@@ -35,6 +35,7 @@ export class MaterialTypeAddComponent implements OnInit {
       data => {
         console.log('create', data);
         this.router.navigate(['material-type-list']);
+        window.location.reload();
       }
     );
   }
