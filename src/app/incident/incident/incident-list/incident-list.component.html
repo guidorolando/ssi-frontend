@@ -1,4 +1,3 @@
-<!--
 <div class="col-md-12">
   <h2> Incident List</h2>
   <button (click)="createIncident()" class="btn btn-success">Create Incident</button>
@@ -24,13 +23,12 @@
       <td>{{incident.workingTurn}}</td>
       <td>{{incident.accidentDate | date }}</td>
       <td>
-        &lt;!&ndash;<button class="btn btn-danger" (click)="deleteIncident(incident)"> Delete</button>&ndash;&gt;
-        &lt;!&ndash;<button class="btn btn-info" (click)="updateIncident(incident)" style="margin-left: 20px;"> Edit</button>&ndash;&gt;
-        <button class="btn btn-danger" > Delete</button>
+        <!--<button class="btn btn-danger" (click)="deleteIncident(incident)"> Delete</button>-->
+        <!--<button class="btn btn-info" (click)="updateIncident(incident)" style="margin-left: 20px;"> Edit</button>-->
+        <button class="btn btn-danger" (click)="deleteIncident(incident.id)"> Delete</button>
         <button class="btn btn-info" style="margin-left: 20px;"> Edit</button>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
--->
