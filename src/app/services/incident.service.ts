@@ -40,4 +40,15 @@ export class IncidentService extends AbstractServiceService {
         return error;
       });
   }
+  deleteIncident(id) {
+    return this.http.delete(baseURL + 'Incident/' + id, httpOptions)
+      .map(response => response)
+      .map((data) => {
+        return data;
+      })
+      .catch(error => {
+        console.log('error:' + error);
+        return error;
+      });
+  }
 }

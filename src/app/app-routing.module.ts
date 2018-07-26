@@ -6,8 +6,8 @@ import {AssignmentReportComponent} from './assignment-report/assignment-report.c
 import {HomeComponent} from './home/home.component';
 import {ReportComponent} from './report/report.component';
 import {AboutComponent} from './about/about.component';
-import {IncidentListComponent} from './accident/incident-list/incident-list.component';
-import {IncidentAddComponent} from './accident/incident-add/incident-add.component';
+/*import {IncidentListComponent} from './accident/incident-list/incident-list.component';*/
+/*import {IncidentAddComponent} from './accident/incident-add/incident-add.component';*/
 import {OEstructureComponent} from './oestructure/oestructure.component';
 import {IncidentTypeListComponent} from './ui/form/Incident-type/incident-type-list/incident-type-list.component';
 import {MaterialCreateComponent} from './material-element/material-create/material-create.component';
@@ -50,14 +50,14 @@ const routes: Routes = [
     path: 'assignment-report',
     component: AssignmentReportComponent
   },
-  {
+  /*{
     path: 'incident-list',
     component: IncidentListComponent
   },
   {
     path: 'incident-add',
     component: IncidentAddComponent
-  },
+  },*/
   {
     path: 'employee-list',
     component: EmployeeListComponent
@@ -154,6 +154,10 @@ const routes: Routes = [
   {
     path: 'delete-mat',
     component: MaterialDeleteComponent
+  },
+  {
+    path: 'incidents',
+    loadChildren: '../app/incident/incident.module#IncidentModule'
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];

@@ -1,16 +1,18 @@
-/*
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {IncidentAgentService} from '../../services/incident-agent.service';
-import {IncidentAgent} from '../../models/incident-agent.model';
-import {IncidentType} from '../../models/incident-type.model';
-import {IncidentTypeService} from '../../services/incident-type.service';
-import {EmployeeService} from '../../services/employee.service';
-import {Employee} from '../../models/employee.model';
-import {CreateIncident} from '../../models/create-incident.model';
-import {IncidentService} from '../../services/incident.service';
+import {IncidentAgent} from "../../../models/incident-agent.model";
+import {IncidentType} from "../../../models/incident-type.model";
+import {Employee} from "../../../models/employee.model";
+import {IncidentTypeService} from "../../../services/incident-type.service";
+import {IncidentAgentService} from "../../../services/incident-agent.service";
+import {IncidentService} from "../../../services/incident.service";
+import {EmployeeService} from "../../../services/employee.service";
+import {CreateIncident} from "../../../models/create-incident.model";
+import {IncidentTypeAddComponent} from "../../incident-type/incident-type-add/incident-type-add.component";
+import {BsModalRef, BsModalService} from "ngx-bootstrap";
+import {IncidentAgentAddComponent} from '../../incident-agent/incident-agent-add/incident-agent-add.component';
 
 @Component({
   selector: 'app-incident-add',
@@ -27,6 +29,7 @@ export class IncidentAddComponent implements OnInit {
   employeeId;
   createIncidentForm: FormGroup;
   public closeEvent = new EventEmitter<boolean>();
+  modalRef: BsModalRef;
 
   constructor(
     private router: Router,
@@ -34,7 +37,8 @@ export class IncidentAddComponent implements OnInit {
     private incidentAgentService: IncidentAgentService,
     private incidentTypeService: IncidentTypeService,
     private employeeService: EmployeeService,
-    private incidentService: IncidentService
+    private incidentService: IncidentService,
+    private modalService: BsModalService
   ) {
     this.employeeId = 0;
     this.employee = new Employee();
@@ -88,11 +92,40 @@ export class IncidentAddComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.incidentService.saveIncident(this.createIncidentForm.value).subscribe(data => {
       console.log(data);
     });
     this.closeIncident();
   }
+  createIncidentType() {
+    this.modalRef = this.modalService.show(IncidentTypeAddComponent, {class: 'modal-lg'});
+    this.modalRef.content.isModal = true;
+    this.modalRef.content.closeIncidentTypeEvent.subscribe(
+      res => this.closeIncidentType(res)
+    );
+  }
+
+  closeIncidentType(close: boolean): void {
+    if (close && this.modalRef) {
+      this.modalRef.hide();
+      this.modalRef.content.closeIncidentTypeEvent.unsubscribe();
+      this.getIncidentTypes();
+    }
+  }
+
+  createIncidentAgent() {
+    this.modalRef = this.modalService.show(IncidentAgentAddComponent, {class: 'modal-lg'});
+    this.modalRef.content.isModal = true;
+    this.modalRef.content.closeIncidentAgentEvent.subscribe(
+      res => this.closeIncidentAgent(res)
+    );
+  }
+
+  closeIncidentAgent(close: boolean): void {
+    if (close && this.modalRef) {
+      this.modalRef.hide();
+      this.modalRef.content.closeIncidentAgentEvent.unsubscribe();
+      this.getIncidentAgents();
+    }
+  }
 }
-*/
