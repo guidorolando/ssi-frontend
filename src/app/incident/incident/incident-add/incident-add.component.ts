@@ -12,6 +12,7 @@ import {EmployeeService} from "../../../services/employee.service";
 import {CreateIncident} from "../../../models/create-incident.model";
 import {IncidentTypeAddComponent} from "../../incident-type/incident-type-add/incident-type-add.component";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
+import {IncidentAgentAddComponent} from '../../incident-agent/incident-agent-add/incident-agent-add.component';
 
 @Component({
   selector: 'app-incident-add',
@@ -108,6 +109,23 @@ export class IncidentAddComponent implements OnInit {
     if (close && this.modalRef) {
       this.modalRef.hide();
       this.modalRef.content.closeIncidentTypeEvent.unsubscribe();
+      this.getIncidentTypes();
+    }
+  }
+
+  createIncidentAgent() {
+    this.modalRef = this.modalService.show(IncidentAgentAddComponent, {class: 'modal-lg'});
+    this.modalRef.content.isModal = true;
+    this.modalRef.content.closeIncidentAgentEvent.subscribe(
+      res => this.closeIncidentAgent(res)
+    );
+  }
+
+  closeIncidentAgent(close: boolean): void {
+    if (close && this.modalRef) {
+      this.modalRef.hide();
+      this.modalRef.content.closeIncidentAgentEvent.unsubscribe();
+      this.getIncidentAgents();
     }
   }
 }

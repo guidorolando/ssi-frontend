@@ -1,9 +1,8 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {CreateIncident} from "../../../models/create-incident.model";
-import {IncidentType} from "../../../models/incident-type.model";
-import {BsModalRef, BsModalService} from "ngx-bootstrap";
-import {IncidentTypeService} from "../../../services/incident-type.service";
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {IncidentType} from '../../../models/incident-type.model';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {IncidentTypeService} from '../../../services/incident-type.service';
 
 @Component({
   selector: 'app-incident-type-add',
