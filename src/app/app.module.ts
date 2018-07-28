@@ -54,8 +54,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
 import {EmployeeDetailComponent} from './employee/employee-detail/employee-detail.component';
 import {ModelModule} from './models/model.module';
-import {IncidentListComponent} from './accident/incident-list/incident-list.component';
-import {IncidentAddComponent} from './accident/incident-add/incident-add.component';
+/*import {IncidentListComponent} from './accident/incident-list/incident-list.component';
+import {IncidentAddComponent} from './accident/incident-add/incident-add.component';*/
 import { OEstructureComponent } from './oestructure/oestructure.component';
 import {AppRoutingModule} from './app-routing.module';
 import { AssignmentService } from './security/services/assignment.service';
@@ -82,6 +82,7 @@ import { CapacityCreateComponent } from './capacity-create/capacity-create.compo
 import {MaterialTypeEditComponent} from './material-type/material-type-edit/material-type-edit.component';
 import { CreatePersonalInformationComponent } from './create-personal-information/create-personal-information.component';
 import { PersonalListComponent } from './personal-list/personal-list.component';
+import {IncidentModule} from "./incident/incident.module";
 
 @NgModule({
   declarations: [
@@ -119,8 +120,8 @@ import { PersonalListComponent } from './personal-list/personal-list.component';
     CapacityCreateComponent,
     CreatePersonalInformationComponent,
     PersonalListComponent,
-    IncidentAddComponent,
-    IncidentListComponent
+    /*IncidentAddComponent,
+    IncidentListComponent*/
   ],
   imports: [
     ReactiveFormsModule,
@@ -129,6 +130,7 @@ import { PersonalListComponent } from './personal-list/personal-list.component';
     FormsModule,
     HttpClientModule,
     ServiceModule.forRoot(),
+    IncidentModule,
    // SecurityModule,
     AppRoutingModule,
     MatStepperModule,

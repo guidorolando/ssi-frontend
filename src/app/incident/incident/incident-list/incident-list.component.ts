@@ -1,10 +1,10 @@
-/*
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Incident} from '../../models/incident.model';
-import {IncidentService} from '../../services/incident.service';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
-import {IncidentAddComponent} from '../incident-add/incident-add.component';
+import {Incident} from "../../../models/incident.model";
+import {IncidentService} from "../../../services/incident.service";
+import {IncidentAddComponent} from "../incident-add/incident-add.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-incident-list',
@@ -16,7 +16,9 @@ export class IncidentListComponent implements OnInit {
   incidents$: Observable<Incident[]>;
   modalRef: BsModalRef;
 
-  constructor(private incidentService: IncidentService, private modalService: BsModalService) {
+  constructor(private incidentService: IncidentService,
+              private  router: Router,
+              private modalService: BsModalService) {
   }
 
   ngOnInit() {
@@ -35,6 +37,13 @@ export class IncidentListComponent implements OnInit {
     );
   }
 
+  deleteIncident(id) {
+    this.incidentService.deleteIncident(id).subscribe(res => {
+      console.log(res);
+      this.router.navigate(['incidents']);
+    });
+  }
+
   closeIncident(close: boolean): void {
     if (close && this.modalRef) {
       this.modalRef.hide();
@@ -43,4 +52,3 @@ export class IncidentListComponent implements OnInit {
   }
 
 }
-*/
