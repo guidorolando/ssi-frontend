@@ -45,14 +45,13 @@
               <li><a routerLink="/assignment-report">Assignment Report</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Material
-            Store</a>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" name="mMat"> Material Store</a>
             <ul class="dropdown-menu">
               <li class="divider"></li>
-              <li><a routerLink="/materialEquipment">Materials</a></li>
-              <li><a routerLink="/create-mat">New Material</a></li>
-              <li><a (click)="createMaterialType()">New Material Type</a></li>
-              <li><a routerLink="/material-type-list">Material Type List</a></li>
+              <li><a routerLink="/materialEquipment">Material List</a></li>
+              <li><a routerLink="/create-mat">New Material</a></li> <li class="divider"></li>
+              <li><a routerLink="/material-type-list" id="submenu-mat-type-list" name="mMaterialTypeList">Material Type List</a></li>
+              <li><a (click)="createMaterialType()" id="submenu-new-mat-type" name="linkNewMaterialType">New Material Type</a></li>
             </ul>
           </li>
           <li class="#"><a routerLink="/oestructure"><span class="fa fa-sitemap fa-lg"></span> Organizational Structure</a></li>

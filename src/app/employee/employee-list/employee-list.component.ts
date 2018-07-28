@@ -61,6 +61,7 @@ export class EmployeeListComponent implements OnInit {
     if (close && this.modalRef) {
       this.modalRef.hide();
       this.modalRef.content.closeEvent.unsubscribe();
+      this.getEmployees();
     }
   }
 

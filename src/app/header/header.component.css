@@ -21,3 +21,14 @@ flex: 1 1 auto;
   background: no-repeat center center;
   background-size: 100% 100%;
 }
+ul{
+  cursor: pointer ;
+  cursor: hand;
+}
+/*li:hover{
+  background-color: black;
+}
+li>a:hover{
+  color: blue;
+  background-color: lightsteelblue;
+}*/
