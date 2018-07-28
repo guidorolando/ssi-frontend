@@ -39,7 +39,7 @@ export class IncidentListComponent implements OnInit {
 
   deleteIncident(id) {
     this.incidentService.deleteIncident(id).subscribe(res => {
-      console.log(res);
+      this.getIncidents();
       this.router.navigate(['incidents']);
     });
   }
@@ -48,6 +48,8 @@ export class IncidentListComponent implements OnInit {
     if (close && this.modalRef) {
       this.modalRef.hide();
       this.modalRef.content.closeEvent.unsubscribe();
+      this.getIncidents();
+      this.router.navigate(['incidents']);
     }
   }
 
