@@ -4,7 +4,7 @@
 <div class="col-md-6" id="content-material-type">
   <div id="material-type-list">
   <h2> Material Type List</h2>
-  <button (click)="createMaterialType()" class="btn btn-success">Add Material Type</button>
+  <button (click)="createMaterialType()" class="btn btn-success" name="btnAddMaterialType">Add Material Type</button>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -17,8 +17,9 @@
     <tr *ngFor="let materialType of materialTypes$ | async">
       <td class="hidden">{{materialType.id}}</td>
       <td>{{materialType.nameType}}</td>
-      <td><button class="btn btn-danger" (click)="deleteMaterialType(materialType.id)"> Delete</button>
-        <button class="btn btn-info" (click)="updateMaterialType(materialType)" style="margin-left: 20px;"> Edit</button>
+      <td>
+        <button class="btn btn-danger" (click)="deleteMaterialType(materialType.id)" name="btnDeleteMT_{{materialType.id}}"> Delete</button>
+        <button class="btn btn-info" (click)="updateMaterialType(materialType)" id="btnEditMT_1" style="margin-left: 20px;" name="btnEditMT_{{materialType.id}}"> Edit</button>
       </td>
     </tr>
     </tbody>

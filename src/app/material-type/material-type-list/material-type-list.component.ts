@@ -67,8 +67,7 @@ export class MaterialTypeListComponent implements OnInit {
       if ( confirm('Esta seguro que desea eliminar?')) {
           this.materialTypeService.deleteMaterialType(id).subscribe(data => {
              // alert('Material type was deleted' + '=>' + id );
-              // this.router.navigate(['material-type-list'] );
-            // this.router.navigate('material-type-list');
+              this.router.navigate(['material-type-list'] );
           });
       }
   }
