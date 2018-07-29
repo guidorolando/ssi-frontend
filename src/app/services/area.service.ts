@@ -3,15 +3,16 @@ import {AbstractServiceService} from './abstract-service.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Area} from '../models/area.model';
 import {Observable} from 'rxjs';
-import {baseURL} from '../shared/baseurl';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
 @Injectable()
-export class AreaService {
-  constructor(private http: HttpClient) {}
+export class AreaService extends AbstractServiceService{
+  constructor(private http: HttpClient) {
+    super(http);
+  }
 
   public getAreas(): Observable<Area[]> {
      return this.http.get<Area[]>('http://localhost:8080/area') ;
@@ -19,7 +20,7 @@ export class AreaService {
 
   getAllAreas(): Observable<any> {
     console.log('esto son areas');
-    return this.http.get<any>(baseURL + 'area', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'area', {responseType: 'json'})
       .map((data) => {
         console.log('area List ', data.data);
         return data.data;

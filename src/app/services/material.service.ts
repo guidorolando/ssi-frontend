@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {baseURL} from '../shared/baseurl';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
 import {AbstractServiceService} from './abstract-service.service';
@@ -18,7 +17,7 @@ export class MaterialService extends AbstractServiceService {
   }
 
   getMaterials(): Observable<any> {
-    return this.http.get<any>(baseURL + 'material', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'material', {responseType: 'json'})
       .map((data) => {
         return data.data;
       })
@@ -29,7 +28,7 @@ export class MaterialService extends AbstractServiceService {
   }
 
   getMaterialById(material: Material): Observable<any> {
-    return this.http.get<any>(baseURL + 'material/' + `${material.id}`, {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'material/' + `${material.id}`, {responseType: 'json'})
       .map((data) => {
         return data.data;
       })
@@ -39,7 +38,7 @@ export class MaterialService extends AbstractServiceService {
       });
   }
   updateMaterial(material: Material): Observable<Material> {
-    return this.http.put(baseURL + 'employee/' + `${material.id}`, material, httpOptions).pipe(
+    return this.http.put(this.baseURL + 'employee/' + `${material.id}`, material, httpOptions).pipe(
       tap(_ => this.log(`updated material id=${material.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );

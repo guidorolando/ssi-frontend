@@ -1,7 +1,6 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {baseURL} from '../shared/baseurl';
 import {AbstractServiceService} from './abstract-service.service';
 
 const httpOptions = {
@@ -16,7 +15,7 @@ export class EmployeeTypeService extends AbstractServiceService {
   }
 
   getEmployeesType(): Observable<any> {
-    return this.http.get<any>(baseURL + 'employeeType', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'employeeType', {responseType: 'json'})
       .map((data) => {
         return data.data;
       })

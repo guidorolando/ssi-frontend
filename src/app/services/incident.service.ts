@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {baseURL} from '../shared/baseurl';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AbstractServiceService} from './abstract-service.service';
 import {Incident} from '../models/incident.model';
@@ -17,7 +16,7 @@ export class IncidentService extends AbstractServiceService {
   }
 
   getIncidents(): Observable<any> {
-    return this.http.get<any>(baseURL + 'Incident', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'Incident', {responseType: 'json'})
       .map((data) => {
         return data;
       })
@@ -30,7 +29,7 @@ export class IncidentService extends AbstractServiceService {
     return null;
   }
   saveIncident(incident) {
-    return this.http.post(baseURL + 'Incident/createIncident',  incident, httpOptions)
+    return this.http.post(this.baseURL + 'Incident/createIncident',  incident, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;
@@ -41,7 +40,7 @@ export class IncidentService extends AbstractServiceService {
       });
   }
   deleteIncident(id) {
-    return this.http.delete(baseURL + 'Incident/' + id, httpOptions)
+    return this.http.delete(this.baseURL + 'Incident/' + id, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;

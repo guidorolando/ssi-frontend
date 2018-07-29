@@ -2,20 +2,22 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { baseURL } from '../../shared/baseurl';
 import { Material } from '../../models/material.model';
+import {AbstractServiceService} from "../../services/abstract-service.service";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
 @Injectable()
-export class MaterialElementService {
+export class MaterialElementService extends AbstractServiceService{
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    super(http);
+  }
 
   getMaterial(): Observable<any> {
-    return this.http.get(baseURL + 'Material').map((res) => {console.log('ruta: ', baseURL + 'material');
+    return this.http.get(this.baseURL + 'Material').map((res) => {console.log('ruta: ', this.baseURL + 'material');
     console.log('material: ', res);
         return res;
       }).catch(error => {
@@ -24,7 +26,7 @@ export class MaterialElementService {
       });
   }
   getMaterialById(id: number): Observable<any> {
-    return this.http.get(baseURL + 'Material/' + id).map((res) => {
+    return this.http.get(this.baseURL + 'Material/' + id).map((res) => {
       console.log('data: ', res);
       return res;
     }).catch(error => {
@@ -34,7 +36,7 @@ export class MaterialElementService {
   }
 
   getMaterialType(): Observable<any> {
-    return this.http.get(baseURL + 'materialType/materialType').map((res) => {
+    return this.http.get(this.baseURL + 'materialType/materialType').map((res) => {
       console.log('data: ', res);
       return res;
     }).catch(error => {
@@ -44,8 +46,7 @@ export class MaterialElementService {
   }
 
   createMaterial (material: Material): Observable<any> {
-    console.log(baseURL);
-    return this.http.post(baseURL + 'Material/',material, httpOptions)
+    return this.http.post(this.baseURL + 'Material/',material, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;
@@ -57,8 +58,8 @@ export class MaterialElementService {
   }
 
   updateMaterial (material: Material): Observable<any> {
-    console.log(baseURL);
-    return this.http.put(baseURL + 'Material/'+material.id,material, httpOptions)
+    console.log(this.baseURL);
+    return this.http.put(this.baseURL + 'Material/'+material.id,material, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;

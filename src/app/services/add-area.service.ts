@@ -2,19 +2,17 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Area} from '../models/area.model';
 import {Observable} from 'rxjs';
-import {isValid} from 'ngx-bootstrap/chronos/create/valid';
-import {baseURL} from '../shared/baseurl';
-import {catchError, tap} from 'rxjs/operators';
-
+import {AbstractServiceService} from "./abstract-service.service";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
 @Injectable()
-export class AddAreaService {
+export class AddAreaService extends AbstractServiceService{
 
   constructor(private http: HttpClient) {
+    super(http);
   }
 
   public validate(areas: Area): boolean {

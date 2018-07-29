@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {baseURL} from '../shared/baseurl';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AbstractServiceService} from './abstract-service.service';
 import {IncidentType} from '../models/incident-type.model';
@@ -18,7 +17,7 @@ export class IncidentAgentService extends AbstractServiceService {
   }
 
   getIncidentAgents(): Observable<any> {
-    return this.http.get<any>(baseURL + 'accidentAgent', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'accidentAgent', {responseType: 'json'})
       .map((data) => {
         return data;
       })
@@ -28,7 +27,7 @@ export class IncidentAgentService extends AbstractServiceService {
       });
   }
   createIncidentAgent(incidentAgent: IncidentAgent): Observable<any> {
-    return this.http.post(baseURL + 'accidentAgent', incidentAgent, httpOptions)
+    return this.http.post(this.baseURL + 'accidentAgent', incidentAgent, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;

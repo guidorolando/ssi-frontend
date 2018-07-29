@@ -1,6 +1,5 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {IncidentType} from '../models/incident-type.model';
-import {baseURL} from '../shared/baseurl';
 import {Observable} from 'rxjs/Observable';
 import {Injectable} from '@angular/core';
 import {catchError, tap} from 'rxjs/operators';
@@ -18,7 +17,7 @@ export class IncidentTypeService extends AbstractServiceService{
   }
 
   getIncidentTypes(): Observable<any> {
-    return this.http.get<any>(baseURL + 'IncidentType', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'IncidentType', {responseType: 'json'})
       .map((data) => {
         return data;
       })
@@ -29,14 +28,14 @@ export class IncidentTypeService extends AbstractServiceService{
   }
 
   updateIncidentType(incidentType: IncidentType): Observable<any> {
-    return this.http.put(baseURL + 'IncidentType/' + `${incidentType.id}`, incidentType, httpOptions).pipe(
+    return this.http.put(this.baseURL + 'IncidentType/' + `${incidentType.id}`, incidentType, httpOptions).pipe(
       tap(_ => this.log(`updated employee id=${incidentType.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
 
   createIncidentType(incidentType: IncidentType): Observable<any> {
-    return this.http.post(baseURL + 'IncidentType', incidentType, httpOptions)
+    return this.http.post(this.baseURL + 'IncidentType', incidentType, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;

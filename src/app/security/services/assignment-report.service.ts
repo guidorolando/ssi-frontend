@@ -2,15 +2,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
-import { baseURL } from '../../shared/baseurl';
+import {AbstractServiceService} from "../../services/abstract-service.service";
 
 @Injectable()
-export class AssignmentReportService {
+export class AssignmentReportService extends AbstractServiceService{
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    super(http);
+  }
 
   getAssignment(): Observable<any> {
-    return this.http.get(baseURL +'assignment').map((res) => {
+    return this.http.get(this.baseURL +'assignment').map((res) => {
         return res;
       }).catch(error => {
         console.log('error: ' + error);

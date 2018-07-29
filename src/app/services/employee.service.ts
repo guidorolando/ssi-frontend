@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Employee} from '../models/employee.model';
 import {Observable} from 'rxjs/Observable';
-import {baseURL} from '../shared/baseurl';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
 import {AbstractServiceService} from './abstract-service.service';
@@ -18,7 +17,7 @@ export class EmployeeService extends AbstractServiceService {
   }
 
   getEmployees(): Observable<any> {
-    return this.http.get<any>(baseURL + 'employee', {responseType: 'json'})
+    return this.http.get<any>(this.baseURL + 'employee', {responseType: 'json'})
       .map((data) => {
         console.log('this employee', data);
         return data.data;
@@ -30,14 +29,14 @@ export class EmployeeService extends AbstractServiceService {
   }
 
   updateEmployee(employee: Employee): Observable<any> {
-    return this.http.put(baseURL + 'employee/' + `${employee.id}`, employee, httpOptions).pipe(
+    return this.http.put(this.baseURL + 'employee/' + `${employee.id}`, employee, httpOptions).pipe(
       tap(_ => this.log(`updated employee id=${employee.id}`)),
       catchError(this.handleError<any>('updateEmployee'))
     );
   }
 
   getEmployeeById(employeeId): Observable<any> {
-    return this.http.get(baseURL + 'employee/' + `${employeeId}`).pipe(
+    return this.http.get(this.baseURL + 'employee/' + `${employeeId}`).pipe(
       tap(_ => this.log(`get employee by id=${employeeId}`)),
       catchError(this.handleError<any>('get Employee by Id'))
     );
@@ -49,7 +48,7 @@ export class EmployeeService extends AbstractServiceService {
 
   createEmployee (employee: Employee): Observable<any> {
     console.log('new employeeee:', employee);
-    return this.http.post(baseURL + 'employee',  employee, httpOptions)
+    return this.http.post(this.baseURL + 'employee',  employee, httpOptions)
       .map(response => response)
       .map((data) => {
         return data;
@@ -61,7 +60,7 @@ export class EmployeeService extends AbstractServiceService {
   }
 
   deleteEmployee(employeeId: number): Observable<any> {
-    return this.http.delete(baseURL + 'employee/' + `${employeeId}`, httpOptions).pipe(
+    return this.http.delete(this.baseURL + 'employee/' + `${employeeId}`, httpOptions).pipe(
       tap(_ => this.log(`delete employee id=${employeeId}`)),
       catchError(this.handleError<any>('deleteEmployee'))
     );

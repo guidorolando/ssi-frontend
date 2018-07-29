@@ -1,9 +1,11 @@
 import {of} from 'rxjs/observable/of';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from '@angular/common/http';
-
+import {environment} from '../../environments/environment';
 export abstract class AbstractServiceService {
+  protected baseURL: string;
   protected constructor(protected _http: HttpClient) {
+    this.baseURL = environment.baseUrl;
   }
   protected handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
